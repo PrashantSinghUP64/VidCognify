@@ -1,0 +1,1232 @@
+﻿
+> vidcognify@0.1.0 test
+> jest
+
+node.exe : PASS __tests__/l
+ib/encryption.test.ts
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (PAS  
+  S __tests__/lib/encryp   
+ tion.test.ts:String) [    
+], RemoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+PASS __tests__/api/summariz
+e.test.ts
+  ÔùÅ Console
+
+    console.error
+      Summarize error: 
+TranscriptError: Supadata 
+is not configured. Please 
+add your Supadata API key 
+in settings.
+          at 
+Object.<anonymous> (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\__tests__\api\
+summarize.test.ts:359:9) {
+        code: 
+'SUPADATA_NOT_CONFIGURED'
+      }
+
+    [0m [90m 400 |[39m  
+     })[33m;[39m
+     [90m 401 |[39m     
+} [36mcatch[39m (error) {
+    
+[31m[1m>[22m[39m[90m 
+402 |[39m       console[3
+3m.[39merror([32m"Summari
+ze error:"[39m[33m,[39m 
+error)[33m;[39m
+     [90m     |[39m      
+         
+[31m[1m^[22m[39m
+     [90m 403 |[39m
+     [90m 404 |[39m      
+ [90m// Provide 
+user-friendly error 
+messages based on error 
+type[39m
+     [90m 405 |[39m      
+ [36mlet[39m 
+errorMessage [33m=[39m 
+[32m"Failed to generate su
+mmary"[39m[33m;[39m[0m
+
+      at error (app/api/sum
+marize/route.ts:402:15)
+
+    console.error
+      Summarize error: 
+TranscriptError: Failed to 
+fetch transcript: Network 
+error
+          at 
+Object.<anonymous> (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\__tests__\api\
+summarize.test.ts:382:9) {
+        code: 
+'TRANSCRIPT_FETCH_FAILED'
+      }
+
+    [0m [90m 400 |[39m  
+     })[33m;[39m
+     [90m 401 |[39m     
+} [36mcatch[39m (error) {
+    
+[31m[1m>[22m[39m[90m 
+402 |[39m       console[3
+3m.[39merror([32m"Summari
+ze error:"[39m[33m,[39m 
+error)[33m;[39m
+     [90m     |[39m      
+         
+[31m[1m^[22m[39m
+     [90m 403 |[39m
+     [90m 404 |[39m      
+ [90m// Provide 
+user-friendly error 
+messages based on error 
+type[39m
+     [90m 405 |[39m      
+ [36mlet[39m 
+errorMessage [33m=[39m 
+[32m"Failed to generate su
+mmary"[39m[33m;[39m[0m
+
+      at error (app/api/sum
+marize/route.ts:402:15)
+
+    console.error
+      Failed to parse 
+metrics JSON: SyntaxError: 
+Unexpected token '*', 
+"**Title**:"... is not 
+valid JSON
+          at JSON.parse 
+(<anonymous>)
+          at parse (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\lib\metricsExt
+raction.ts:53:28)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\app\api\summarize\rou
+te.ts:311:31
+
+    [0m [90m 70 |[39m   
+    }[33m;[39m
+     [90m 71 |[39m     } 
+[36mcatch[39m (e) {
+    
+[31m[1m>[22m[39m[90m 
+72 |[39m       console[33
+m.[39merror([32m"Failed 
+to parse metrics 
+JSON:"[39m[33m,[39m 
+e)[33m;[39m
+     [90m    |[39m       
+        
+[31m[1m^[22m[39m
+     [90m 73 |[39m       
+[90m// Fallback response 
+for safe API 
+continuation[39m
+     [90m 74 |[39m       
+[36mreturn[39m {
+     [90m 75 |[39m       
+  metrics[33m:[39m {[0m
+
+      at error (lib/metrics
+Extraction.ts:72:15)
+      at app/api/summarize/
+route.ts:311:31
+
+    console.error
+      Failed to parse 
+metrics JSON: SyntaxError: 
+Unexpected token '*', 
+"**Title**:"... is not 
+valid JSON
+          at JSON.parse 
+(<anonymous>)
+          at parse (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\lib\metricsExt
+raction.ts:53:28)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\app\api\summarize\rou
+te.ts:311:31
+
+    [0m [90m 70 |[39m   
+    }[33m;[39m
+     [90m 71 |[39m     } 
+[36mcatch[39m (e) {
+    
+[31m[1m>[22m[39m[90m 
+72 |[39m       console[33
+m.[39merror([32m"Failed 
+to parse metrics 
+JSON:"[39m[33m,[39m 
+e)[33m;[39m
+     [90m    |[39m       
+        
+[31m[1m^[22m[39m
+     [90m 73 |[39m       
+[90m// Fallback response 
+for safe API 
+continuation[39m
+     [90m 74 |[39m       
+[36mreturn[39m {
+     [90m 75 |[39m       
+  metrics[33m:[39m {[0m
+
+      at error (lib/metrics
+Extraction.ts:72:15)
+      at app/api/summarize/
+route.ts:311:31
+
+    console.warn
+      Topic extraction 
+failed: Error: Topic 
+extraction failed
+          at 
+Object.<anonymous> (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\__tests__\api\
+summarize.test.ts:552:45)
+          at 
+Promise.finally.completed (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:1557:28)
+          at new Promise 
+(<anonymous>)
+          at 
+callAsyncCircusFn (C:\Users
+\ps702\Downloads\VidCognify
+\VidCognify\node_modules\je
+st-circus\build\jestAdapter
+Init.js:1497:10)
+          at 
+_callCircusTest (C:\Users\p
+s702\Downloads\VidCognify\V
+idCognify\node_modules\jest
+-circus\build\jestAdapterIn
+it.js:1007:40)
+          at _runTest (C:\U
+sers\ps702\Downloads\VidCog
+nify\VidCognify\node_module
+s\jest-circus\build\jestAda
+pterInit.js:947:3)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\node_modules\jest-cir
+cus\build\jestAdapterInit.j
+s:849:7
+          at 
+_runTestsForDescribeBlock (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:862:11)
+          at 
+_runTestsForDescribeBlock (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:857:11)
+          at 
+_runTestsForDescribeBlock (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:857:11)
+          at run (C:\Users\
+ps702\Downloads\VidCognify\
+VidCognify\node_modules\jes
+t-circus\build\jestAdapterI
+nit.js:761:3)
+          at runAndTransfor
+mResultsToJestFormat (C:\Us
+ers\ps702\Downloads\VidCogn
+ify\VidCognify\node_modules
+\jest-circus\build\jestAdap
+terInit.js:1918:21)
+          at jestAdapter (C
+:\Users\ps702\Downloads\Vid
+Cognify\VidCognify\node_mod
+ules\jest-circus\build\runn
+er.js:101:19)
+          at 
+runTestInternal (C:\Users\p
+s702\Downloads\VidCognify\V
+idCognify\node_modules\jest
+-runner\build\index.js:275:
+16)
+          at runTest (C:\Us
+ers\ps702\Downloads\VidCogn
+ify\VidCognify\node_modules
+\jest-runner\build\index.js
+:343:7)
+
+    [0m [90m 296 |[39m  
+       } [36mcatch[39m 
+(topicError) {
+     [90m 297 |[39m      
+     [90m// Topic 
+extraction is optional - 
+continue without 
+topics[39m
+    
+[31m[1m>[22m[39m[90m 
+298 |[39m           consol
+e[33m.[39mwarn([32m"Topi
+c extraction 
+failed:"[39m[33m,[39m 
+topicError)[33m;[39m
+     [90m     |[39m      
+             
+[31m[1m^[22m[39m
+     [90m 299 |[39m      
+   }
+     [90m 300 |[39m      
+ }
+     [90m 301 |[39m[0m
+
+      at warn (app/api/summ
+arize/route.ts:298:19)
+
+    console.error
+      Failed to parse 
+metrics JSON: SyntaxError: 
+Unexpected token '*', 
+"**Title**:"... is not 
+valid JSON
+          at JSON.parse 
+(<anonymous>)
+          at parse (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\lib\metricsExt
+raction.ts:53:28)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\app\api\summarize\rou
+te.ts:311:31
+
+    [0m [90m 70 |[39m   
+    }[33m;[39m
+     [90m 71 |[39m     } 
+[36mcatch[39m (e) {
+    
+[31m[1m>[22m[39m[90m 
+72 |[39m       console[33
+m.[39merror([32m"Failed 
+to parse metrics 
+JSON:"[39m[33m,[39m 
+e)[33m;[39m
+     [90m    |[39m       
+        
+[31m[1m^[22m[39m
+     [90m 73 |[39m       
+[90m// Fallback response 
+for safe API 
+continuation[39m
+     [90m 74 |[39m       
+[36mreturn[39m {
+     [90m 75 |[39m       
+  metrics[33m:[39m {[0m
+
+      at error (lib/metrics
+Extraction.ts:72:15)
+      at app/api/summarize/
+route.ts:311:31
+
+    console.error
+      Failed to parse 
+metrics JSON: SyntaxError: 
+Unexpected token '*', 
+"**Title**:"... is not 
+valid JSON
+          at JSON.parse 
+(<anonymous>)
+          at parse (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\lib\metricsExt
+raction.ts:53:28)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\app\api\summarize\rou
+te.ts:311:31
+
+    [0m [90m 70 |[39m   
+    }[33m;[39m
+     [90m 71 |[39m     } 
+[36mcatch[39m (e) {
+    
+[31m[1m>[22m[39m[90m 
+72 |[39m       console[33
+m.[39merror([32m"Failed 
+to parse metrics 
+JSON:"[39m[33m,[39m 
+e)[33m;[39m
+     [90m    |[39m       
+        
+[31m[1m^[22m[39m
+     [90m 73 |[39m       
+[90m// Fallback response 
+for safe API 
+continuation[39m
+     [90m 74 |[39m       
+[36mreturn[39m {
+     [90m 75 |[39m       
+  metrics[33m:[39m {[0m
+
+      at error (lib/metrics
+Extraction.ts:72:15)
+      at app/api/summarize/
+route.ts:311:31
+
+    console.error
+      Summarize error: 
+Error: All models failed. 
+Errors: glm-4.7: API 
+error; gemini: API error; 
+groq: API error; openai: 
+API error
+          at 
+Object.<anonymous> (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\__tests__\api\
+summarize.test.ts:656:9)
+          at 
+Promise.finally.completed (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:1557:28)
+          at new Promise 
+(<anonymous>)
+          at 
+callAsyncCircusFn (C:\Users
+\ps702\Downloads\VidCognify
+\VidCognify\node_modules\je
+st-circus\build\jestAdapter
+Init.js:1497:10)
+          at 
+_callCircusTest (C:\Users\p
+s702\Downloads\VidCognify\V
+idCognify\node_modules\jest
+-circus\build\jestAdapterIn
+it.js:1007:40)
+          at _runTest (C:\U
+sers\ps702\Downloads\VidCog
+nify\VidCognify\node_module
+s\jest-circus\build\jestAda
+pterInit.js:947:3)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\node_modules\jest-cir
+cus\build\jestAdapterInit.j
+s:849:7
+          at 
+_runTestsForDescribeBlock (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:862:11)
+          at 
+_runTestsForDescribeBlock (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:857:11)
+          at 
+_runTestsForDescribeBlock (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:857:11)
+          at run (C:\Users\
+ps702\Downloads\VidCognify\
+VidCognify\node_modules\jes
+t-circus\build\jestAdapterI
+nit.js:761:3)
+          at runAndTransfor
+mResultsToJestFormat (C:\Us
+ers\ps702\Downloads\VidCogn
+ify\VidCognify\node_modules
+\jest-circus\build\jestAdap
+terInit.js:1918:21)
+          at jestAdapter (C
+:\Users\ps702\Downloads\Vid
+Cognify\VidCognify\node_mod
+ules\jest-circus\build\runn
+er.js:101:19)
+          at 
+runTestInternal (C:\Users\p
+s702\Downloads\VidCognify\V
+idCognify\node_modules\jest
+-runner\build\index.js:275:
+16)
+          at runTest (C:\Us
+ers\ps702\Downloads\VidCogn
+ify\VidCognify\node_modules
+\jest-runner\build\index.js
+:343:7)
+
+    [0m [90m 400 |[39m  
+     })[33m;[39m
+     [90m 401 |[39m     
+} [36mcatch[39m (error) {
+    
+[31m[1m>[22m[39m[90m 
+402 |[39m       console[3
+3m.[39merror([32m"Summari
+ze error:"[39m[33m,[39m 
+error)[33m;[39m
+     [90m     |[39m      
+         
+[31m[1m^[22m[39m
+     [90m 403 |[39m
+     [90m 404 |[39m      
+ [90m// Provide 
+user-friendly error 
+messages based on error 
+type[39m
+     [90m 405 |[39m      
+ [36mlet[39m 
+errorMessage [33m=[39m 
+[32m"Failed to generate su
+mmary"[39m[33m;[39m[0m
+
+      at error (app/api/sum
+marize/route.ts:402:15)
+
+    console.error
+      Failed to parse 
+metrics JSON: SyntaxError: 
+Unexpected token '*', 
+"**Title**:"... is not 
+valid JSON
+          at JSON.parse 
+(<anonymous>)
+          at parse (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\lib\metricsExt
+raction.ts:53:28)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\app\api\summarize\rou
+te.ts:311:31
+
+    [0m [90m 70 |[39m   
+    }[33m;[39m
+     [90m 71 |[39m     } 
+[36mcatch[39m (e) {
+    
+[31m[1m>[22m[39m[90m 
+72 |[39m       console[33
+m.[39merror([32m"Failed 
+to parse metrics 
+JSON:"[39m[33m,[39m 
+e)[33m;[39m
+     [90m    |[39m       
+        
+[31m[1m^[22m[39m
+     [90m 73 |[39m       
+[90m// Fallback response 
+for safe API 
+continuation[39m
+     [90m 74 |[39m       
+[36mreturn[39m {
+     [90m 75 |[39m       
+  metrics[33m:[39m {[0m
+
+      at error (lib/metrics
+Extraction.ts:72:15)
+      at app/api/summarize/
+route.ts:311:31
+
+    console.error
+      Summarize error: 
+Error: Database write error
+          at 
+Object.<anonymous> (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\__tests__\api\
+summarize.test.ts:703:9)
+          at 
+Promise.finally.completed (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:1557:28)
+          at new Promise 
+(<anonymous>)
+          at 
+callAsyncCircusFn (C:\Users
+\ps702\Downloads\VidCognify
+\VidCognify\node_modules\je
+st-circus\build\jestAdapter
+Init.js:1497:10)
+          at 
+_callCircusTest (C:\Users\p
+s702\Downloads\VidCognify\V
+idCognify\node_modules\jest
+-circus\build\jestAdapterIn
+it.js:1007:40)
+          at _runTest (C:\U
+sers\ps702\Downloads\VidCog
+nify\VidCognify\node_module
+s\jest-circus\build\jestAda
+pterInit.js:947:3)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\node_modules\jest-cir
+cus\build\jestAdapterInit.j
+s:849:7
+          at 
+_runTestsForDescribeBlock (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:862:11)
+          at 
+_runTestsForDescribeBlock (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:857:11)
+          at 
+_runTestsForDescribeBlock (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:857:11)
+          at run (C:\Users\
+ps702\Downloads\VidCognify\
+VidCognify\node_modules\jes
+t-circus\build\jestAdapterI
+nit.js:761:3)
+          at runAndTransfor
+mResultsToJestFormat (C:\Us
+ers\ps702\Downloads\VidCogn
+ify\VidCognify\node_modules
+\jest-circus\build\jestAdap
+terInit.js:1918:21)
+          at jestAdapter (C
+:\Users\ps702\Downloads\Vid
+Cognify\VidCognify\node_mod
+ules\jest-circus\build\runn
+er.js:101:19)
+          at 
+runTestInternal (C:\Users\p
+s702\Downloads\VidCognify\V
+idCognify\node_modules\jest
+-runner\build\index.js:275:
+16)
+          at runTest (C:\Us
+ers\ps702\Downloads\VidCogn
+ify\VidCognify\node_modules
+\jest-runner\build\index.js
+:343:7)
+
+    [0m [90m 400 |[39m  
+     })[33m;[39m
+     [90m 401 |[39m     
+} [36mcatch[39m (error) {
+    
+[31m[1m>[22m[39m[90m 
+402 |[39m       console[3
+3m.[39merror([32m"Summari
+ze error:"[39m[33m,[39m 
+error)[33m;[39m
+     [90m     |[39m      
+         
+[31m[1m^[22m[39m
+     [90m 403 |[39m
+     [90m 404 |[39m      
+ [90m// Provide 
+user-friendly error 
+messages based on error 
+type[39m
+     [90m 405 |[39m      
+ [36mlet[39m 
+errorMessage [33m=[39m 
+[32m"Failed to generate su
+mmary"[39m[33m;[39m[0m
+
+      at error (app/api/sum
+marize/route.ts:402:15)
+
+    console.error
+      Summarize error: 
+Error: Database connection 
+error
+          at 
+Object.<anonymous> (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\__tests__\api\
+summarize.test.ts:717:9)
+          at 
+Promise.finally.completed (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:1557:28)
+          at new Promise 
+(<anonymous>)
+          at 
+callAsyncCircusFn (C:\Users
+\ps702\Downloads\VidCognify
+\VidCognify\node_modules\je
+st-circus\build\jestAdapter
+Init.js:1497:10)
+          at 
+_callCircusTest (C:\Users\p
+s702\Downloads\VidCognify\V
+idCognify\node_modules\jest
+-circus\build\jestAdapterIn
+it.js:1007:40)
+          at _runTest (C:\U
+sers\ps702\Downloads\VidCog
+nify\VidCognify\node_module
+s\jest-circus\build\jestAda
+pterInit.js:947:3)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\node_modules\jest-cir
+cus\build\jestAdapterInit.j
+s:849:7
+          at 
+_runTestsForDescribeBlock (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:862:11)
+          at 
+_runTestsForDescribeBlock (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:857:11)
+          at 
+_runTestsForDescribeBlock (
+C:\Users\ps702\Downloads\Vi
+dCognify\VidCognify\node_mo
+dules\jest-circus\build\jes
+tAdapterInit.js:857:11)
+          at run (C:\Users\
+ps702\Downloads\VidCognify\
+VidCognify\node_modules\jes
+t-circus\build\jestAdapterI
+nit.js:761:3)
+          at runAndTransfor
+mResultsToJestFormat (C:\Us
+ers\ps702\Downloads\VidCogn
+ify\VidCognify\node_modules
+\jest-circus\build\jestAdap
+terInit.js:1918:21)
+          at jestAdapter (C
+:\Users\ps702\Downloads\Vid
+Cognify\VidCognify\node_mod
+ules\jest-circus\build\runn
+er.js:101:19)
+          at 
+runTestInternal (C:\Users\p
+s702\Downloads\VidCognify\V
+idCognify\node_modules\jest
+-runner\build\index.js:275:
+16)
+          at runTest (C:\Us
+ers\ps702\Downloads\VidCogn
+ify\VidCognify\node_modules
+\jest-runner\build\index.js
+:343:7)
+
+    [0m [90m 400 |[39m  
+     })[33m;[39m
+     [90m 401 |[39m     
+} [36mcatch[39m (error) {
+    
+[31m[1m>[22m[39m[90m 
+402 |[39m       console[3
+3m.[39merror([32m"Summari
+ze error:"[39m[33m,[39m 
+error)[33m;[39m
+     [90m     |[39m      
+         
+[31m[1m^[22m[39m
+     [90m 403 |[39m
+     [90m 404 |[39m      
+ [90m// Provide 
+user-friendly error 
+messages based on error 
+type[39m
+     [90m 405 |[39m      
+ [36mlet[39m 
+errorMessage [33m=[39m 
+[32m"Failed to generate su
+mmary"[39m[33m;[39m[0m
+
+      at error (app/api/sum
+marize/route.ts:402:15)
+
+    console.error
+      Failed to parse 
+metrics JSON: SyntaxError: 
+Unexpected token '*', 
+"**Title**:"... is not 
+valid JSON
+          at JSON.parse 
+(<anonymous>)
+          at parse (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\lib\metricsExt
+raction.ts:53:28)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\app\api\summarize\rou
+te.ts:311:31
+
+    [0m [90m 70 |[39m   
+    }[33m;[39m
+     [90m 71 |[39m     } 
+[36mcatch[39m (e) {
+    
+[31m[1m>[22m[39m[90m 
+72 |[39m       console[33
+m.[39merror([32m"Failed 
+to parse metrics 
+JSON:"[39m[33m,[39m 
+e)[33m;[39m
+     [90m    |[39m       
+        
+[31m[1m^[22m[39m
+     [90m 73 |[39m       
+[90m// Fallback response 
+for safe API 
+continuation[39m
+     [90m 74 |[39m       
+[36mreturn[39m {
+     [90m 75 |[39m       
+  metrics[33m:[39m {[0m
+
+      at error (lib/metrics
+Extraction.ts:72:15)
+      at app/api/summarize/
+route.ts:311:31
+
+    console.error
+      Failed to parse 
+metrics JSON: SyntaxError: 
+Unexpected token '*', 
+"**Title**:"... is not 
+valid JSON
+          at JSON.parse 
+(<anonymous>)
+          at parse (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\lib\metricsExt
+raction.ts:53:28)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\app\api\summarize\rou
+te.ts:311:31
+
+    [0m [90m 70 |[39m   
+    }[33m;[39m
+     [90m 71 |[39m     } 
+[36mcatch[39m (e) {
+    
+[31m[1m>[22m[39m[90m 
+72 |[39m       console[33
+m.[39merror([32m"Failed 
+to parse metrics 
+JSON:"[39m[33m,[39m 
+e)[33m;[39m
+     [90m    |[39m       
+        
+[31m[1m^[22m[39m
+     [90m 73 |[39m       
+[90m// Fallback response 
+for safe API 
+continuation[39m
+     [90m 74 |[39m       
+[36mreturn[39m {
+     [90m 75 |[39m       
+  metrics[33m:[39m {[0m
+
+      at error (lib/metrics
+Extraction.ts:72:15)
+      at app/api/summarize/
+route.ts:311:31
+
+    console.error
+      Failed to parse 
+metrics JSON: SyntaxError: 
+Unexpected token '*', 
+"**Title**:"... is not 
+valid JSON
+          at JSON.parse 
+(<anonymous>)
+          at parse (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\lib\metricsExt
+raction.ts:53:28)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\app\api\summarize\rou
+te.ts:311:31
+
+    [0m [90m 70 |[39m   
+    }[33m;[39m
+     [90m 71 |[39m     } 
+[36mcatch[39m (e) {
+    
+[31m[1m>[22m[39m[90m 
+72 |[39m       console[33
+m.[39merror([32m"Failed 
+to parse metrics 
+JSON:"[39m[33m,[39m 
+e)[33m;[39m
+     [90m    |[39m       
+        
+[31m[1m^[22m[39m
+     [90m 73 |[39m       
+[90m// Fallback response 
+for safe API 
+continuation[39m
+     [90m 74 |[39m       
+[36mreturn[39m {
+     [90m 75 |[39m       
+  metrics[33m:[39m {[0m
+
+      at error (lib/metrics
+Extraction.ts:72:15)
+      at app/api/summarize/
+route.ts:311:31
+
+    console.error
+      Failed to parse 
+metrics JSON: SyntaxError: 
+Unexpected token '*', 
+"**Title**:"... is not 
+valid JSON
+          at JSON.parse 
+(<anonymous>)
+          at parse (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\lib\metricsExt
+raction.ts:53:28)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\app\api\summarize\rou
+te.ts:311:31
+
+    [0m [90m 70 |[39m   
+    }[33m;[39m
+     [90m 71 |[39m     } 
+[36mcatch[39m (e) {
+    
+[31m[1m>[22m[39m[90m 
+72 |[39m       console[33
+m.[39merror([32m"Failed 
+to parse metrics 
+JSON:"[39m[33m,[39m 
+e)[33m;[39m
+     [90m    |[39m       
+        
+[31m[1m^[22m[39m
+     [90m 73 |[39m       
+[90m// Fallback response 
+for safe API 
+continuation[39m
+     [90m 74 |[39m       
+[36mreturn[39m {
+     [90m 75 |[39m       
+  metrics[33m:[39m {[0m
+
+      at error (lib/metrics
+Extraction.ts:72:15)
+      at app/api/summarize/
+route.ts:311:31
+
+    console.error
+      Failed to parse 
+metrics JSON: SyntaxError: 
+Unexpected token '*', 
+"**Title**:"... is not 
+valid JSON
+          at JSON.parse 
+(<anonymous>)
+          at parse (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\lib\metricsExt
+raction.ts:53:28)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\app\api\summarize\rou
+te.ts:311:31
+
+    [0m [90m 70 |[39m   
+    }[33m;[39m
+     [90m 71 |[39m     } 
+[36mcatch[39m (e) {
+    
+[31m[1m>[22m[39m[90m 
+72 |[39m       console[33
+m.[39merror([32m"Failed 
+to parse metrics 
+JSON:"[39m[33m,[39m 
+e)[33m;[39m
+     [90m    |[39m       
+        
+[31m[1m^[22m[39m
+     [90m 73 |[39m       
+[90m// Fallback response 
+for safe API 
+continuation[39m
+     [90m 74 |[39m       
+[36mreturn[39m {
+     [90m 75 |[39m       
+  metrics[33m:[39m {[0m
+
+      at error (lib/metrics
+Extraction.ts:72:15)
+      at app/api/summarize/
+route.ts:311:31
+
+    console.error
+      Failed to parse 
+metrics JSON: SyntaxError: 
+Unexpected token '*', 
+"**Title**:"... is not 
+valid JSON
+          at JSON.parse 
+(<anonymous>)
+          at parse (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\lib\metricsExt
+raction.ts:53:28)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\app\api\summarize\rou
+te.ts:311:31
+
+    [0m [90m 70 |[39m   
+    }[33m;[39m
+     [90m 71 |[39m     } 
+[36mcatch[39m (e) {
+    
+[31m[1m>[22m[39m[90m 
+72 |[39m       console[33
+m.[39merror([32m"Failed 
+to parse metrics 
+JSON:"[39m[33m,[39m 
+e)[33m;[39m
+     [90m    |[39m       
+        
+[31m[1m^[22m[39m
+     [90m 73 |[39m       
+[90m// Fallback response 
+for safe API 
+continuation[39m
+     [90m 74 |[39m       
+[36mreturn[39m {
+     [90m 75 |[39m       
+  metrics[33m:[39m {[0m
+
+      at error (lib/metrics
+Extraction.ts:72:15)
+      at app/api/summarize/
+route.ts:311:31
+
+    console.error
+      Failed to parse 
+metrics JSON: SyntaxError: 
+Unexpected token 'T', 
+"This is ju"... is not 
+valid JSON
+          at JSON.parse 
+(<anonymous>)
+          at parse (C:\User
+s\ps702\Downloads\VidCognif
+y\VidCognify\lib\metricsExt
+raction.ts:53:28)
+          at C:\Users\ps702
+\Downloads\VidCognify\VidCo
+gnify\app\api\summarize\rou
+te.ts:311:31
+
+    [0m [90m 70 |[39m   
+    }[33m;[39m
+     [90m 71 |[39m     } 
+[36mcatch[39m (e) {
+    
+[31m[1m>[22m[39m[90m 
+72 |[39m       console[33
+m.[39merror([32m"Failed 
+to parse metrics 
+JSON:"[39m[33m,[39m 
+e)[33m;[39m
+     [90m    |[39m       
+        
+[31m[1m^[22m[39m
+     [90m 73 |[39m       
+[90m// Fallback response 
+for safe API 
+continuation[39m
+     [90m 74 |[39m       
+[36mreturn[39m {
+     [90m 75 |[39m       
+  metrics[33m:[39m {[0m
+
+      at error (lib/metrics
+Extraction.ts:72:15)
+      at app/api/summarize/
+route.ts:311:31
+
+PASS __tests__/lib/chunking
+.test.ts
+FAIL 
+__tests__/api/auth.test.ts
+  ÔùÅ Test suite failed to 
+run
+
+    Configuration error:
+
+    Could not locate 
+module @/app/api/auth/regis
+ter/route mapped as:
+    C:\Users\ps702\Download
+s\VidCognify\VidCognify\$1.
+
+    Please check your 
+configuration for these 
+entries:
+    {
+      "moduleNameMapper": {
+        "/^@\/(.*)$/": "C:\
+Users\ps702\Downloads\VidCo
+gnify\VidCognify\$1"
+      },
+      "resolver": undefined
+    }
+
+    [0m [90m 20 |[39m   
+}[33m;[39m
+     [90m 21 |[39m 
+})[33m;[39m
+    
+[31m[1m>[22m[39m[90m 
+22 |[39m
+     [90m    |[39m 
+[31m[1m^[22m[39m
+     [90m 23 |[39m 
+[90m// Get reference to 
+mocked functions[39m
+     [90m 24 |[39m 
+[36mconst[39m { __mockFin
+dUnique[33m:[39m 
+mockFindUnique[33m,[39m 
+__mockCreate[33m:[39m 
+mockCreate } [33m=[39m je
+st[33m.[39mrequireMock([
+32m'@/lib/prisma'[39m)[33
+m;[39m
+     [90m 25 |[39m[0m
+
+      at createNoMappedModu
+leFoundError (node_modules/
+jest-resolve/build/index.js
+:1117:17)
+      at 
+Object.<anonymous> (__tests
+__/api/auth.test.ts:22:16)
+
+FAIL 
+__tests__/lib/auth.test.ts
+  ÔùÅ Test suite failed to 
+run
+
+    Configuration error:
+
+    Could not locate 
+module @/lib/auth mapped 
+as:
+    C:\Users\ps702\Download
+s\VidCognify\VidCognify\$1.
+
+    Please check your 
+configuration for these 
+entries:
+    {
+      "moduleNameMapper": {
+        "/^@\/(.*)$/": "C:\
+Users\ps702\Downloads\VidCo
+gnify\VidCognify\$1"
+      },
+      "resolver": undefined
+    }
+
+    [0m [90m 3 |[39m 
+[90m// Mock APP_SECRET 
+environment variable for 
+tests[39m
+     [90m 4 |[39m 
+[36mconst[39m 
+[33mTEST_APP_SECRET[39m 
+[33m=[39m [32m'test-app-
+secret-for-jwt-signing-1234
+5'[39m[33m;[39m
+    
+[31m[1m>[22m[39m[90m 
+5 |[39m
+     [90m   |[39m 
+[31m[1m^[22m[39m
+     [90m 6 |[39m 
+describe([32m'auth 
+utilities'[39m[33m,[39m 
+() [33m=>[39m {
+     [90m 7 |[39m   
+[90m// Set up APP_SECRET 
+before tests[39m
+     [90m 8 |[39m   
+[36mconst[39m 
+originalEnv [33m=[39m pro
+cess[33m.[39menv[33m.[3
+9m[33mAPP_SECRET[39m[33m
+;[39m[0m
+
+      at createNoMappedModu
+leFoundError (node_modules/
+jest-resolve/build/index.js
+:1117:17)
+      at 
+Object.<anonymous> (__tests
+__/lib/auth.test.ts:5:15)
+
+Test Suites: 2 failed, 3 
+passed, 5 total
+Tests:       53 passed, 53 
+total
+Snapshots:   0 total
+Time:        1.117 s, 
+estimated 2 s
+Ran all test suites.

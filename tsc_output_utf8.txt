@@ -1,0 +1,273 @@
+﻿__tests__/api/summarize.test.ts(169,11): error TS2322: Type '"glm-4.7"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(169,60): error TS2322: Type '"zai"' is not assignable to type '"groq"'.
+__tests__/api/summarize.test.ts(170,11): error TS2322: Type '"glm-4.7-flash"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(170,72): error TS2322: Type '"zai"' is not assignable to type '"groq"'.
+__tests__/api/summarize.test.ts(171,11): error TS2322: Type '"gemini-3-flash"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(171,74): error TS2322: Type '"openrouter"' is not assignable to type '"groq"'.
+__tests__/api/summarize.test.ts(172,11): error TS2322: Type '"gemini"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(172,69): error TS2322: Type '"legacy"' is not assignable to type '"groq"'.
+__tests__/api/summarize.test.ts(173,11): error TS2322: Type '"groq"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(173,67): error TS2322: Type '"legacy"' is not assignable to type '"groq"'.
+__tests__/api/summarize.test.ts(174,11): error TS2322: Type '"openai"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(174,64): error TS2322: Type '"legacy"' is not assignable to type '"groq"'.
+__tests__/api/summarize.test.ts(207,38): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is ErrorEvent, thisArg?: any): ErrorEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is ErrorEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(217,38): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is ErrorEvent, thisArg?: any): ErrorEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is ErrorEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(227,38): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is ErrorEvent, thisArg?: any): ErrorEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is ErrorEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(238,38): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is ErrorEvent, thisArg?: any): ErrorEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is ErrorEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(248,38): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is ErrorEvent, thisArg?: any): ErrorEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is ErrorEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(313,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(344,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(370,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is object, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => boolean' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is object'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => boolean' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(374,38): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is ErrorEvent, thisArg?: any): ErrorEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is ErrorEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(389,38): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is ErrorEvent, thisArg?: any): ErrorEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is ErrorEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(420,9): error TS2322: Type '"glm-4.7"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(430,9): error TS2322: Type '"glm-4.7"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(462,17): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, array: object[]) => value is ProgressEvent, thisArg?: any): ProgressEvent[]', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ProgressEvent' is not assignable to parameter of type '(value: object, index: number, array: object[]) => value is ProgressEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, array: object[]) => unknown, thisArg?: any): object[]', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ProgressEvent' is not assignable to parameter of type '(value: object, index: number, array: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(463,36): error TS2339: Property 'stage' does not exist on type 'StreamEvent'.
+  Property 'stage' does not exist on type 'ErrorEvent'.
+__tests__/api/summarize.test.ts(470,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(491,9): error TS2322: Type '"gemini"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(516,17): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, array: object[]) => value is ProgressEvent, thisArg?: any): ProgressEvent[]', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ProgressEvent' is not assignable to parameter of type '(value: object, index: number, array: object[]) => value is ProgressEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, array: object[]) => unknown, thisArg?: any): object[]', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ProgressEvent' is not assignable to parameter of type '(value: object, index: number, array: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(517,36): error TS2339: Property 'stage' does not exist on type 'StreamEvent'.
+  Property 'stage' does not exist on type 'ErrorEvent'.
+__tests__/api/summarize.test.ts(524,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(547,9): error TS2322: Type '"groq"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(576,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(580,38): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is ErrorEvent, thisArg?: any): ErrorEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is ErrorEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(598,9): error TS2322: Type '"glm-4.7"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(605,9): error TS2322: Type '"glm-4.7"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(630,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(663,38): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is ErrorEvent, thisArg?: any): ErrorEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is ErrorEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(689,9): error TS2322: Type '"glm-4.7"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(696,9): error TS2322: Type '"glm-4.7"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(710,38): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is ErrorEvent, thisArg?: any): ErrorEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is ErrorEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(724,38): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is ErrorEvent, thisArg?: any): ErrorEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is ErrorEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is ErrorEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(742,9): error TS2322: Type '"glm-4.7"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(747,9): error TS2322: Type '"glm-4.7"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(771,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(780,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(789,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(798,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(807,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(826,9): error TS2322: Type '"glm-4.7"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(834,9): error TS2322: Type '"glm-4.7"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(859,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+__tests__/api/summarize.test.ts(867,9): error TS2322: Type '"glm-4.7"' is not assignable to type '"llama-3.3-70b-versatile"'.
+__tests__/api/summarize.test.ts(892,41): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: object, index: number, obj: object[]) => value is CompleteEvent, thisArg?: any): CompleteEvent | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => value is CompleteEvent'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+  Overload 2 of 2, '(predicate: (value: object, index: number, obj: object[]) => unknown, thisArg?: any): object | undefined', gave the following error.
+    Argument of type '(e: StreamEvent) => e is CompleteEvent' is not assignable to parameter of type '(value: object, index: number, obj: object[]) => unknown'.
+      Types of parameters 'e' and 'value' are incompatible.
+        Type 'object' is not assignable to type 'StreamEvent'.
+app/api/security-questions/route.ts(32,9): error TS2322: Type 'true' is not assignable to type 'never'.

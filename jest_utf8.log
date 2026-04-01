@@ -1,0 +1,247 @@
+﻿
+> vidcognify@0.1.0 test
+> jest __tests__/api/security-questions.test.ts
+
+  console.error
+    Error setting up security questions: TypeError: _prisma.prisma.securityQuestion.findUnique is not a function
+        at findUnique (C:\Users\ps702\Downloads\VidCognify\VidCognify\app\api\security-questions\setup\route.ts:40:46)
+        at Object.<anonymous> (C:\Users\ps702\Downloads\VidCognify\VidCognify\__tests__\api\security-questions.test.ts:111:19)
+
+    [0m [90m  96 |[39m     })
+     [90m  97 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m  98 |[39m     console[33m.[39merror([32m"Error setting up security questions:"[39m[33m,[39m error)
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m  99 |[39m     [36mreturn[39m [33mNextResponse[39m[33m.[39mjson(
+     [90m 100 |[39m       { error[33m:[39m [32m"Failed to set up security questions"[39m }[33m,[39m
+     [90m 101 |[39m       { status[33m:[39m [35m500[39m }[0m
+
+      at error (app/api/security-questions/setup/route.ts:98:13)
+      at Object.<anonymous> (__tests__/api/security-questions.test.ts:111:19)
+
+  console.error
+    Error setting up security questions: TypeError: _prisma.prisma.securityQuestion.findUnique is not a function
+        at findUnique (C:\Users\ps702\Downloads\VidCognify\VidCognify\app\api\security-questions\setup\route.ts:40:46)
+        at Object.<anonymous> (C:\Users\ps702\Downloads\VidCognify\VidCognify\__tests__\api\security-questions.test.ts:130:19)
+
+    [0m [90m  96 |[39m     })
+     [90m  97 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m  98 |[39m     console[33m.[39merror([32m"Error setting up security questions:"[39m[33m,[39m error)
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m  99 |[39m     [36mreturn[39m [33mNextResponse[39m[33m.[39mjson(
+     [90m 100 |[39m       { error[33m:[39m [32m"Failed to set up security questions"[39m }[33m,[39m
+     [90m 101 |[39m       { status[33m:[39m [35m500[39m }[0m
+
+      at error (app/api/security-questions/setup/route.ts:98:13)
+      at Object.<anonymous> (__tests__/api/security-questions.test.ts:130:19)
+
+node.exe : FAIL __tests__/a
+pi/security-questions.test.
+ts
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (FAI  
+  L __tests__/...estions   
+ .test.ts:String) [], R    
+emoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+  Security Questions API 
+Integration Tests
+    GET 
+/api/security-questions
+      ÔêÜ should return 
+available security 
+questions (7 ms)
+    POST /api/security-ques
+tions/setup
+      ├ù should require 
+authentication (1 ms)
+      ├ù should set up 3 
+security questions 
+successfully (48 ms)
+      ├ù should fail if 
+user already has questions 
+set up (6 ms)
+    POST /api/security-ques
+tions/user
+      ÔêÜ should return 
+security questions for 
+valid email (3 ms)
+      ÔêÜ should prevent 
+user enumeration with 
+generic 404 message (585 
+ms)
+    POST /api/security-ques
+tions/verify
+      ÔêÜ should verify 
+correct answers and return 
+reset token (6 ms)
+      ÔêÜ should fail if 
+less than 2 answers are 
+correct (1 ms)
+    POST /api/security-ques
+tions/reset-password
+      ÔêÜ should 
+successfully reset 
+password (4 ms)
+      ÔêÜ should reject 
+weak passwords (1 ms)
+      ÔêÜ should reject 
+invalid or expired tokens 
+(1 ms)
+
+  ÔùÅ Security Questions 
+API Integration Tests ÔÇ║ 
+POST /api/security-question
+s/setup ÔÇ║ should require 
+authentication
+
+    TypeError: Cannot read 
+properties of undefined 
+(reading 'status')
+
+    [0m [90m 94 |[39m   
+    [36mconst[39m req 
+[33m=[39m createJsonReque
+st([32m'http://localhost/a
+pi/security-questions/setup
+'[39m[33m,[39m 
+{})[33m;[39m
+     [90m 95 |[39m       
+[36mconst[39m res 
+[33m=[39m 
+[36mawait[39m setupQuesti
+ons(req)[33m;[39m
+    
+[31m[1m>[22m[39m[90m 
+96 |[39m       expect(res
+[33m.[39mstatus)[33m.[39
+mtoBe([35m401[39m)[33m;
+[39m
+     [90m    |[39m       
+           
+[31m[1m^[22m[39m
+     [90m 97 |[39m     
+})[33m;[39m
+     [90m 98 |[39m
+     [90m 99 |[39m     
+it([32m'should set up 3 
+security questions successf
+ully'[39m[33m,[39m 
+[36masync[39m () 
+[33m=>[39m {[0m
+
+      at Object.status (__t
+ests__/api/security-questio
+ns.test.ts:96:18)
+
+  ÔùÅ Security Questions 
+API Integration Tests ÔÇ║ 
+POST /api/security-question
+s/setup ÔÇ║ should set up 
+3 security questions 
+successfully
+
+    expect(received).toBe(e
+xpected) // Object.is 
+equality
+
+    Expected: 200
+    Received: 500
+
+    [0m [90m 112 |[39m  
+     [36mconst[39m data 
+[33m=[39m 
+[36mawait[39m res[33m.[
+39mjson()[33m;[39m
+     [90m 113 |[39m      
+ 
+    
+[31m[1m>[22m[39m[90m 
+114 |[39m       expect(res
+[33m.[39mstatus)[33m.[3
+9mtoBe([35m200[39m)[33m;
+[39m
+     [90m     |[39m      
+                    
+[31m[1m^[22m[39m
+     [90m 115 |[39m      
+ expect(data[33m.[39msucc
+ess)[33m.[39mtoBe([36mtr
+ue[39m)[33m;[39m
+     [90m 116 |[39m      
+ expect(mockedPrisma[33m.
+[39muserSecurityQuestion[3
+3m.[39mcreate)[33m.[39mt
+oHaveBeenCalledTimes([35m3
+[39m)[33m;[39m
+     [90m 117 |[39m     
+})[33m;[39m[0m
+
+      at Object.toBe (__tes
+ts__/api/security-questions
+.test.ts:114:26)
+
+  ÔùÅ Security Questions 
+API Integration Tests ÔÇ║ 
+POST /api/security-question
+s/setup ÔÇ║ should fail if 
+user already has questions 
+set up
+
+    expect(received).toBe(e
+xpected) // Object.is 
+equality
+
+    Expected: 400
+    Received: 500
+
+    [0m [90m 131 |[39m  
+     [36mconst[39m data 
+[33m=[39m 
+[36mawait[39m res[33m.[
+39mjson()[33m;[39m
+     [90m 132 |[39m      
+ 
+    
+[31m[1m>[22m[39m[90m 
+133 |[39m       expect(res
+[33m.[39mstatus)[33m.[3
+9mtoBe([35m400[39m)[33m;
+[39m
+     [90m     |[39m      
+                    
+[31m[1m^[22m[39m
+     [90m 134 |[39m      
+ expect(data[33m.[39merro
+r)[33m.[39mtoBe([32m'Sec
+urity questions are 
+already set up for this 
+account'[39m)[33m;[39m
+     [90m 135 |[39m     
+})[33m;[39m
+     [90m 136 |[39m   
+})[33m;[39m[0m
+
+      at Object.toBe (__tes
+ts__/api/security-questions
+.test.ts:133:26)
+
+Test Suites: 1 failed, 1 
+total
+Tests:       3 failed, 8 
+passed, 11 total
+Snapshots:   0 total
+Time:        0.924 s, 
+estimated 1 s
+Ran all test suites 
+matching __tests__/api/secu
+rity-questions.test.ts.

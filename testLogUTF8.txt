@@ -1,0 +1,121 @@
+﻿
+> vidcognify@0.1.0 test
+> jest __tests__/api/security-questions.test.ts
+
+node : FAIL __tests__/api/s
+ecurity-questions.test.ts
+At line:1 char:1
++ node -e "const cp=require
+('child_process'); try { 
+cp.execSync('npm te ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (FAI  
+  L __tests__/...estions   
+ .test.ts:String) [], R    
+emoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+  Security Questions API 
+Integration Tests
+    GET 
+/api/security-questions
+      ÔêÜ should return 
+available security 
+questions (10 ms)
+    POST /api/security-ques
+tions/setup
+      ÔêÜ should require 
+authentication (2 ms)
+      ÔêÜ should set up 3 
+security questions 
+successfully (2 ms)
+      ├ù should fail if 
+user already has questions 
+set up (5 ms)
+    POST /api/security-ques
+tions/user
+      ÔêÜ should return 
+security questions for 
+valid email (3 ms)
+      ÔêÜ should prevent 
+user enumeration with 
+generic 404 message (475 
+ms)
+    POST /api/security-ques
+tions/verify
+      ÔêÜ should verify 
+correct answers and return 
+reset token (1 ms)
+      ÔêÜ should fail if 
+less than 2 answers are 
+correct (1 ms)
+    POST /api/security-ques
+tions/reset-password
+      ÔêÜ should 
+successfully reset 
+password (3 ms)
+      ÔêÜ should reject 
+weak passwords (1 ms)
+      ÔêÜ should reject 
+invalid or expired tokens 
+(1 ms)
+
+  ÔùÅ Security Questions 
+API Integration Tests ÔÇ║ 
+POST /api/security-question
+s/setup ÔÇ║ should fail if 
+user already has questions 
+set up
+
+    expect(received).toBe(e
+xpected) // Object.is 
+equality
+
+    Expected: "Security 
+questions already set up. 
+Use the update endpoint to 
+modify."
+    Received: "All 3 
+security questions must be 
+different"
+
+    [0m [90m 144 |[39m  
+     
+     [90m 145 |[39m      
+ expect(res[33m.[39mstatu
+s)[33m.[39mtoBe([35m400
+[39m)[33m;[39m
+    
+[31m[1m>[22m[39m[90m 
+146 |[39m       expect(dat
+a[33m.[39merror)[33m.[3
+9mtoBe([32m'Security 
+questions already set up. 
+Use the update endpoint to 
+modify.'[39m)[33m;[39m
+     [90m     |[39m      
+                    
+[31m[1m^[22m[39m
+     [90m 147 |[39m     
+})[33m;[39m
+     [90m 148 |[39m   
+})[33m;[39m
+     [90m 149 |[39m[0m
+
+      at Object.toBe (__tes
+ts__/api/security-questions
+.test.ts:146:26)
+
+Test Suites: 1 failed, 1 
+total
+Tests:       1 failed, 10 
+passed, 11 total
+Snapshots:   0 total
+Time:        1.014 s
+Ran all test suites 
+matching __tests__/api/secu
+rity-questions.test.ts.
