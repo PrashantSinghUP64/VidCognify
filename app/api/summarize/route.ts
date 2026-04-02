@@ -77,7 +77,7 @@ export async function GET(req: NextRequest) {
 /**
  * Supported output languages for summaries
  */
-type OutputLanguage = "de" | "en" | "fr" | "es" | "it";
+type OutputLanguage = "de" | "en" | "fr" | "es" | "it" | "hi";
 
 const LANGUAGE_NAMES: Record<OutputLanguage, string> = {
   de: "German",
@@ -85,6 +85,7 @@ const LANGUAGE_NAMES: Record<OutputLanguage, string> = {
   fr: "French",
   es: "Spanish",
   it: "Italian",
+  hi: "Hindi",
 };
 
 /**
@@ -571,6 +572,7 @@ function buildChapterBasedPrompt(
   return `Analyze this video transcript and create a ${config.description} chapter-based summary.
 
 **IMPORTANT: Write the entire summary in ${languageName}.**
+Respond strictly in ${languageName}
 
 **Transcript:**
 ${transcript.slice(0, 25000)}${transcript.length > 25000 ? "\n\n[Transcript truncated...]" : ""}

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Check, ChevronDown, Globe } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-export type OutputLanguage = "de" | "en" | "fr" | "es" | "it"
+export type OutputLanguage = "de" | "en" | "fr" | "es" | "it" | "hi"
 
 interface LanguageOption {
   code: OutputLanguage
@@ -20,6 +20,7 @@ const LANGUAGES: LanguageOption[] = [
   { code: "fr", name: "French", flag: "🇫🇷", nativeName: "Français" },
   { code: "es", name: "Spanish", flag: "🇪🇸", nativeName: "Español" },
   { code: "it", name: "Italian", flag: "🇮🇹", nativeName: "Italiano" },
+  { code: "hi", name: "हिन्दी", flag: "🇮🇳", nativeName: "Hindi" },
 ]
 
 interface LanguageDropdownProps {
