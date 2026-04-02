@@ -1,3 +1,8 @@
+import 'dotenv/config'
+
+// Neon strongly recommends using the direct non-pooled connection for migrations/schema pushes
+const migrateUrl = process.env.DATABASE_URL?.replace('-pooler', '')
+
 export default {
   schema: 'prisma/schema.prisma',
   migrations: {
@@ -5,8 +10,6 @@ export default {
     seed: 'npx tsx prisma/seed.ts',
   },
   datasource: {
-    // Use process.env instead of env() to allow builds without DATABASE_URL
-    // (e.g., during Docker image build where DB connection isn't needed)
-    url: process.env.DATABASE_URL ?? 'file:./dev.db',
+    url: migrateUrl,
   },
 }

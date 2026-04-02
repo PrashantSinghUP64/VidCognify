@@ -1,0 +1,35 @@
+﻿node.exe : Loaded Prisma 
+config from 
+prisma.config.ts.
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (Loa  
+  ded Prisma c...isma.co   
+ nfig.ts.:String) [], R    
+emoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+
+Prisma schema loaded from 
+prisma\schema.prisma.
+Datasource "db": PostgreSQL database "neondb", schema "public" at "ep-holy-waterfall-ano04wb8-pooler.c-6.us-east-1.aws.neon.tech"
+
+Error: P1001: Can't reach 
+database server at `ep-holy
+-waterfall-ano04wb8-pooler.
+c-6.us-east-1.aws.neon.tech
+:5432`
+
+Please make sure your 
+database server is running 
+at `ep-holy-waterfall-ano04
+wb8-pooler.c-6.us-east-1.aw
+s.neon.tech:5432`.

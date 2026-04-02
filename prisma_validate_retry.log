@@ -1,0 +1,63 @@
+﻿node.exe : Loaded 
+Prisma config from 
+prisma.config.ts.
+At line:1 char:1
++ & "C:\Program Files\
+nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : 
+NotSpecified: (Loa    
+ded Prisma 
+c...isma.co    
+nfig.ts.:String) [], 
+R    emoteException
+    + 
+FullyQualifiedErrorI  
+  d : 
+NativeCommandError
+ 
+
+Prisma schema loaded 
+from 
+prisma\schema.prisma.
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔ
+öÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö
+ÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔ
+öÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö
+ÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔ
+öÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö
+É
+Ôöé  Update available 
+7.3.0 -> 7.6.0        
+                Ôöé
+Ôöé  Run the 
+following to update   
+                      
+   Ôöé
+Ôöé    npm i 
+--save-dev 
+prisma@latest         
+              Ôöé
+Ôöé    npm i 
+@prisma/client@latest 
+                      
+   Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔ
+öÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö
+ÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔ
+öÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö
+ÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔ
+öÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö
+ÿ
+The schema at prisma\schema.prisma is valid ­ƒÜÇ

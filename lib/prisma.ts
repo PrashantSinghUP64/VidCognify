@@ -1,30 +1,35 @@
-import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client'
+import { Pool } from 'pg'
+import { PrismaPg } from '@prisma/adapter-pg'
 
 const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined;
-};
-
-function getDatabaseUrl(): string {
-  const url = process.env.DATABASE_URL;
-  if (!url) {
-    if (process.env.NODE_ENV === 'production') {
-      throw new Error('DATABASE_URL environment variable is required in production');
-    }
-    return 'file:./dev.db';
-  }
-  return url;
+  prisma: PrismaClient | undefined
 }
 
-// Note: Prisma 7 with better-sqlite3 adapter stores DateTime as ISO 8601 strings.
-// Fresh installations work correctly. If upgrading from Prisma 6 with existing data,
-// delete the old database file or migrate DateTime columns from Unix timestamps to ISO 8601.
-const adapter = new PrismaBetterSqlite3({
-  url: getDatabaseUrl()
-});
+function getDatabaseUrl(): string {
+  const url = process.env.DATABASE_URL
+  if (!url) {
+    if (process.env.NODE_ENV === 'production') {
+      throw new Error('DATABASE_URL environment variable is required in production')
+    }
+    return ''
+  }
+  return url
+}
 
-export const prisma = globalForPrisma.prisma ?? new PrismaClient({ adapter });
+const connectionString = getDatabaseUrl()
+
+// Initialize a connection pool with the PostgreSQL connection string
+const pool = new Pool({ connectionString })
+const adapter = new PrismaPg(pool)
+
+export const prisma =
+  globalForPrisma.prisma ??
+  new PrismaClient({
+    adapter,
+    log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
+  })
 
 if (process.env.NODE_ENV !== 'production') {
-  globalForPrisma.prisma = prisma;
+  globalForPrisma.prisma = prisma
 }
