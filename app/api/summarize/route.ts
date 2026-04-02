@@ -162,12 +162,13 @@ export async function POST(req: NextRequest) {
         return;
       }
 
-      // Check cache first (per-user cache)
+      // Check cache first (per-user and per-language cache)
       const existingSummary = await prisma.summary.findUnique({
         where: {
-          videoId_userId: {
+          videoId_userId_language: {
             videoId,
             userId,
+            language,
           },
         },
         include: {
@@ -339,6 +340,7 @@ export async function POST(req: NextRequest) {
         data: {
           videoId,
           userId,
+          language,
           title,
           content: summary,
           transcript: transcriptText,

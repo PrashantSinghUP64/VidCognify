@@ -119,6 +119,7 @@ model Summary {
   sentiment     String?
   difficulty    String?
   category      String?
+  language      String   @default("en")
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
@@ -127,7 +128,7 @@ model Summary {
   topicEdits         UserTopicEdit[]
   transcriptSegments TranscriptSegment[]
 
-  @@unique([videoId, userId])
+  @@unique([videoId, userId, language])
   @@index([userId])
 }
 
