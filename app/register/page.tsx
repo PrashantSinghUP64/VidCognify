@@ -55,10 +55,7 @@ export default function RegisterPage() {
 
   // Password validation state
   const passwordChecks = {
-    minLength: password.length >= 10,
-    hasUppercase: /[A-Z]/.test(password),
-    hasNumber: /[0-9]/.test(password),
-    hasSpecial: /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password),
+    minLength: password.length >= 6,
   }
   const isPasswordValid = Object.values(passwordChecks).every(Boolean)
 
@@ -306,22 +303,10 @@ export default function RegisterPage() {
 
                       {/* Password requirements */}
                       {password && (
-                        <div className="grid grid-cols-2 gap-2 text-xs mt-2">
+                        <div className="grid grid-cols-1 gap-2 text-xs mt-2">
                           <div className={cn("flex items-center gap-1", passwordChecks.minLength ? "text-emerald-600" : "text-slate-400")}>
                             {passwordChecks.minLength ? <Check className="h-3 w-3" /> : <X className="h-3 w-3" />}
-                            <span>10+ characters</span>
-                          </div>
-                          <div className={cn("flex items-center gap-1", passwordChecks.hasUppercase ? "text-emerald-600" : "text-slate-400")}>
-                            {passwordChecks.hasUppercase ? <Check className="h-3 w-3" /> : <X className="h-3 w-3" />}
-                            <span>1 uppercase</span>
-                          </div>
-                          <div className={cn("flex items-center gap-1", passwordChecks.hasNumber ? "text-emerald-600" : "text-slate-400")}>
-                            {passwordChecks.hasNumber ? <Check className="h-3 w-3" /> : <X className="h-3 w-3" />}
-                            <span>1 number</span>
-                          </div>
-                          <div className={cn("flex items-center gap-1", passwordChecks.hasSpecial ? "text-emerald-600" : "text-slate-400")}>
-                            {passwordChecks.hasSpecial ? <Check className="h-3 w-3" /> : <X className="h-3 w-3" />}
-                            <span>1 special character</span>
+                            <span>6+ characters</span>
                           </div>
                         </div>
                       )}

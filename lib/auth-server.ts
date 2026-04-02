@@ -12,29 +12,22 @@ import bcrypt from "bcrypt"
  * - At least 1 special character
  */
 export function validatePassword(password: string): { valid: boolean; error?: string } {
-  if (password.length < 10) {
-    return { valid: false, error: "Password must be at least 10 characters long" }
-  }
-  if (!/[A-Z]/.test(password)) {
-    return { valid: false, error: "Password must contain at least one uppercase letter" }
-  }
-  if (!/[0-9]/.test(password)) {
-    return { valid: false, error: "Password must contain at least one number" }
-  }
-  if (!/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password)) {
-    return { valid: false, error: "Password must contain at least one special character" }
+  if (password.length < 6) {
+    return { valid: false, error: "Password must be at least 6 characters long" }
   }
   return { valid: true }
 }
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
-    provider: "sqlite",
+    provider: "postgresql",
   }),
+
+  baseURL: process.env.BETTER_AUTH_URL || process.env.VERCEL_URL || "http://localhost:3000",
 
   emailAndPassword: {
     enabled: true,
-    minPasswordLength: 10,
+    minPasswordLength: 6,
     maxPasswordLength: 128,
     password: {
       hash: async (password) => {
@@ -82,6 +75,8 @@ export const auth = betterAuth({
 
   trustedOrigins: [
     process.env.BETTER_AUTH_URL || "http://localhost:3000",
+    "https://vid-cognify.vercel.app",
+    "*"
   ],
 
   databaseHooks: {
