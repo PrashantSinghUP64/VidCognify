@@ -74,7 +74,7 @@ export function Sidebar({ className }: SidebarProps) {
             <div className="w-9 h-9 flex items-center justify-center">
               <Image
                 src="/logo.png"
-                alt="YT Summarizer Logo"
+                alt="VidCognify Logo"
                 width={36}
                 height={36}
                 className="w-full h-full object-contain"
@@ -88,7 +88,7 @@ export function Sidebar({ className }: SidebarProps) {
                   exit={{ opacity: 0, width: 0 }}
                   className="font-display font-semibold text-slate-900 whitespace-nowrap overflow-hidden"
                 >
-                  YT Summary
+                  VidCognify
                 </motion.span>
               )}
             </AnimatePresence>
@@ -305,14 +305,14 @@ export function MobileSidebar() {
             <div className="w-9 h-9 flex items-center justify-center">
               <Image
                 src="/logo.png"
-                alt="YT Summarizer Logo"
+                alt="VidCognify Logo"
                 width={36}
                 height={36}
                 className="w-full h-full object-contain"
               />
             </div>
             <span className="font-display font-semibold text-slate-900">
-              YT Summary
+              VidCognify
             </span>
           </Link>
         </div>

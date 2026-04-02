@@ -117,14 +117,14 @@ export default function Home() {
               <div className="w-10 h-10 flex items-center justify-center">
                 <Image
                   src="/logo.png"
-                  alt="YT Summarizer Logo"
+                  alt="VidCognify Logo"
                   width={40}
                   height={40}
                   className="w-full h-full object-contain"
                 />
               </div>
               <span className="font-display text-xl font-semibold text-slate-900">
-                YT Summarizer
+                VidCognify
               </span>
             </div>
             <div className="flex items-center gap-3">
@@ -235,8 +235,8 @@ export default function Home() {
             {/* Headline */}
             <motion.div variants={itemVariants} className="text-center">
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900">
-                YouTube
-                <span className="text-gradient"> Summarizer</span>
+                Vid
+                <span className="text-gradient">Cognify</span>
               </h1>
               <p className="text-slate-500 mt-4 text-lg">
                 Transform any YouTube video into a concise, chapter-based summary with intelligent topic detection

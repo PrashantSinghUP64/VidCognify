@@ -87,7 +87,7 @@ export function generateMarkdown(
   // Footer
   lines.push('---');
   lines.push('');
-  lines.push('*Generated with YouTube Summarizer*');
+  lines.push('*Generated with VidCognify*');
 
   return lines.join('\n');
 }

@@ -1,9 +1,16 @@
 import { NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
 
+const DEFAULT_QUESTIONS = [
+  "What was the name of your first school?",
+  "What city were you born in?",
+  "What was your childhood nickname?",
+]
+
 /**
  * GET /api/security-questions
- * Returns the list of available security questions
+ * Returns the list of available security questions.
+ * Auto-seeds the 3 default questions if the table is empty.
  */
 export async function GET() {
   try {
@@ -17,23 +24,12 @@ export async function GET() {
       },
     })
 
-    // Auto-seed default questions if we don't have all 5
-    if (questions.length < 5) {
-      const defaultQuestions = [
-        "What is your nick name?",
-        "What was your first travelling city name?",
-        "What was the name of your first school?",
-        "What is your favorite movie?",
-        "What city were you born in?",
-      ]
-
-      for (const q of defaultQuestions) {
-        await prisma.securityQuestion.upsert({
-          where: { question: q },
-          update: {},
-          create: { question: q },
-        })
-      }
+    // Seed default questions if none exist
+    if (questions.length === 0) {
+      await prisma.securityQuestion.createMany({
+        data: DEFAULT_QUESTIONS.map((q) => ({ question: q })),
+        skipDuplicates: true,
+      })
 
       questions = await prisma.securityQuestion.findMany({
         select: {
