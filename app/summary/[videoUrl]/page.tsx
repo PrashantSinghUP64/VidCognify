@@ -57,6 +57,7 @@ interface SummaryData {
   sentiment?: string
   difficulty?: string
   category?: string
+  keywords?: string
   topics: Topic[]
   transcriptSegments: TranscriptSegment[]
   modelUsed: string
@@ -160,7 +161,8 @@ export default function SummaryPage({ params }: PageProps) {
                 setVideoId(data.summary.videoId)
                 break
               } else if (data.type === "error") {
-                throw new Error(data.error || "An error occurred")
+                setError("Summary unavailable for this video")
+                break
               }
             } catch (parseError) {
               if (parseError instanceof SyntaxError) continue
@@ -485,6 +487,30 @@ export default function SummaryPage({ params }: PageProps) {
                               🏷️ {summary.category}
                             </span>
                           )}
+                        </div>
+                      )}
+
+                      {/* Keywords Badges */}
+                      {summary.keywords && (
+                        <div className="flex flex-wrap gap-2 mb-8">
+                          {summary.keywords.split(',').map((kw: string) => {
+                            const trimmedKw = kw.trim();
+                            if (!trimmedKw) return null;
+                            return (
+                              <button
+                                key={trimmedKw}
+                                onClick={() => {
+                                  if (navigator.clipboard) {
+                                    navigator.clipboard.writeText(trimmedKw);
+                                  }
+                                }}
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-slate-50 border border-slate-200 text-slate-600 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-200 transition-all cursor-pointer shadow-sm"
+                                title="Click to copy keyword"
+                              >
+                                #{trimmedKw}
+                              </button>
+                            );
+                          })}
                         </div>
                       )}
 

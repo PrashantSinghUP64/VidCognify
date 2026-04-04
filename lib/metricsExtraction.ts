@@ -4,6 +4,7 @@ export interface ExtractedMetrics {
   sentiment: string;
   difficulty: string;
   category: string;
+  keywords: string[];
 }
 
 export async function extractMetrics(
@@ -15,21 +16,24 @@ export async function extractMetrics(
 Analyze the provided video transcript and its summary to determine the following metrics:
 1. Sentiment: The overall tone of the video. Must be exactly one of: "Positive", "Neutral", "Negative".
 2. Difficulty: The complexity level of the subject matter. Must be exactly one of: "Beginner", "Intermediate", "Advanced".
-3. Category: The main topic of the video. Must be exactly one of: "Machine Learning", "Web Dev", "Finance", "History", "Science", "Other".
+3. Category: The main topic of the video. Must be exactly one of: "Technology", "Finance", "Health", "History", "Science", "Education", "Entertainment", "Other".
+4. Keywords: Top 3 to 5 keywords related to the video content.
 
 You must return ONLY a raw JSON object string with no markdown formatting and no extra text.
 The JSON must have this strict schema:
 {
   "sentiment": "Positive" | "Neutral" | "Negative",
   "difficulty": "Beginner" | "Intermediate" | "Advanced",
-  "category": "Machine Learning" | "Web Dev" | "Finance" | "History" | "Science" | "Other"
+  "category": "Technology" | "Finance" | "Health" | "History" | "Science" | "Education" | "Entertainment" | "Other",
+  "keywords": ["keyword1", "keyword2", ...]
 }`;
 
+    const truncatedText = transcript.slice(0, 8000);
     const userPrompt = `Video Summary:
 ${summary}
 
-Video Transcript snippet (first 10000 chars):
-${transcript.substring(0, 10000)}
+Video Transcript snippet (first 8000 chars):
+${truncatedText}
 
 Output the JSON strictly.`;
 
@@ -59,8 +63,11 @@ Output the JSON strictly.`;
       if (!["Beginner", "Intermediate", "Advanced"].includes(metrics.difficulty)) {
           metrics.difficulty = "Intermediate";
       }
-      if (!["Machine Learning", "Web Dev", "Finance", "History", "Science", "Other"].includes(metrics.category)) {
+      if (!["Technology", "Finance", "Health", "History", "Science", "Education", "Entertainment", "Other"].includes(metrics.category)) {
           metrics.category = "Other";
+      }
+      if (!Array.isArray(metrics.keywords)) {
+          metrics.keywords = [];
       }
 
       return {
@@ -75,7 +82,8 @@ Output the JSON strictly.`;
         metrics: {
             sentiment: "Neutral",
             difficulty: "Intermediate",
-            category: "Other"
+            category: "Education",
+            keywords: []
         },
         modelUsed: aiResponse.modelUsed,
         tokensUsed: aiResponse.tokensUsed,

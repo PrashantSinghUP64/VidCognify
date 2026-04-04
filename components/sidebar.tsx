@@ -22,6 +22,7 @@ import {
   LogIn,
   LogOut,
   User,
+  LayoutDashboard,
 } from "lucide-react"
 import type React from "react"
 import { useAuth } from "@/hooks/useAuth"
@@ -112,13 +113,22 @@ export function Sidebar({ className }: SidebarProps) {
               )
             })}
             {isAuthenticated && (
-              <NavItem
-                icon={Settings}
-                label="Settings"
-                href="/settings"
-                isActive={pathname === "/settings"}
-                isExpanded={isExpanded}
-              />
+              <>
+                <NavItem
+                  icon={LayoutDashboard}
+                  label="Dashboard"
+                  href="/dashboard"
+                  isActive={pathname === "/dashboard"}
+                  isExpanded={isExpanded}
+                />
+                <NavItem
+                  icon={Settings}
+                  label="Settings"
+                  href="/settings"
+                  isActive={pathname === "/settings"}
+                  isExpanded={isExpanded}
+                />
+              </>
             )}
           </div>
         </nav>
@@ -340,8 +350,22 @@ export function MobileSidebar() {
               )
             })}
             {isAuthenticated && (
-              <Link
-                href="/settings"
+              <>
+                <Link
+                  href="/dashboard"
+                  className={cn(
+                    "flex items-center gap-3 px-4 py-3.5 rounded-xl min-h-[48px]",
+                    "transition-colors duration-200",
+                    pathname === "/dashboard"
+                      ? "bg-indigo-50 text-indigo-600"
+                      : "text-slate-500 hover:text-slate-700 hover:bg-slate-100"
+                  )}
+                >
+                  <LayoutDashboard className="w-5 h-5" />
+                  <span className="text-sm font-medium">Dashboard</span>
+                </Link>
+                <Link
+                  href="/settings"
                 className={cn(
                   "flex items-center gap-3 px-4 py-3.5 rounded-xl min-h-[48px]",
                   "transition-colors duration-200",
@@ -353,6 +377,7 @@ export function MobileSidebar() {
                 <Settings className="w-5 h-5" />
                 <span className="text-sm font-medium">Settings</span>
               </Link>
+              </>
             )}
           </div>
         </nav>

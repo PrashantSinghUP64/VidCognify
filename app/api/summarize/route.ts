@@ -35,6 +35,7 @@ interface SummaryResult {
   sentiment?: string;
   difficulty?: string;
   category?: string;
+  keywords?: string;
   topics: Array<{
     id: string;
     title: string;
@@ -193,6 +194,7 @@ export async function POST(req: NextRequest) {
             sentiment: existingSummary.sentiment || undefined,
             difficulty: existingSummary.difficulty || undefined,
             category: existingSummary.category || undefined,
+            keywords: existingSummary.keywords || undefined,
             topics: existingSummary.topics.map((t: { id: string; title: string; startMs: number; endMs: number; order: number }) => ({
               id: t.id,
               title: t.title,
@@ -348,6 +350,7 @@ export async function POST(req: NextRequest) {
           sentiment: metrics?.sentiment,
           difficulty: metrics?.difficulty,
           category: metrics?.category,
+          keywords: metrics?.keywords?.join(","),
           topics: {
             create: topics.map((topic) => ({
               title: topic.title,
@@ -382,6 +385,7 @@ export async function POST(req: NextRequest) {
           sentiment: savedSummary.sentiment || undefined,
           difficulty: savedSummary.difficulty || undefined,
           category: savedSummary.category || undefined,
+          keywords: savedSummary.keywords || undefined,
           topics: savedSummary.topics.map((t: { id: string; title: string; startMs: number; endMs: number; order: number }) => ({
             id: t.id,
             title: t.title,
@@ -528,8 +532,9 @@ Key principles:
 - Be factual and neutral, never critical
 - Use clear, engaging language`;
 
+  const truncatedTranscript = fullTranscript.slice(0, 8000);
   const userPrompt = buildChapterBasedPrompt(
-    fullTranscript,
+    truncatedTranscript,
     videoId,
     config,
     languageName

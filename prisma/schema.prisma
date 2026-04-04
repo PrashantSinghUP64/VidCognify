@@ -119,6 +119,7 @@ model Summary {
   sentiment     String?
   difficulty    String?
   category      String?
+  keywords      String?
   language      String   @default("en")
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
