@@ -532,7 +532,7 @@ Key principles:
 - Be factual and neutral, never critical
 - Use clear, engaging language`;
 
-  const truncatedTranscript = fullTranscript.slice(0, 8000);
+  const truncatedTranscript = fullTranscript.slice(0, 4000);
   const userPrompt = buildChapterBasedPrompt(
     truncatedTranscript,
     videoId,
