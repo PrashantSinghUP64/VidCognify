@@ -95,7 +95,7 @@ export default function LoginPage() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="font-display text-xl font-semibold text-slate-900">
+              <span className="font-display text-xl font-semibold text-slate-900 dark:text-slate-100">
                 VidCognify
               </span>
             </Link>
@@ -105,8 +105,8 @@ export default function LoginPage() {
             <div className="card-elevated p-6 md:p-8">
               {/* Header */}
               <div className="text-center mb-6">
-                <h1 className="font-display text-2xl font-bold text-slate-900">Welcome back</h1>
-                <p className="text-slate-500 mt-1">Sign in to your account to continue</p>
+                <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-slate-100">Welcome back</h1>
+                <p className="text-slate-500 dark:text-slate-400 mt-1">Sign in to your account to continue</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -124,7 +124,7 @@ export default function LoginPage() {
 
                 {/* Email field */}
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-slate-700">
+                  <label htmlFor="email" className="text-sm font-medium text-slate-700 dark:text-slate-300">
                     Email
                   </label>
                   <div className="relative">
@@ -137,8 +137,8 @@ export default function LoginPage() {
                       placeholder="Enter your email"
                       className={cn(
                         "w-full h-12 pl-12 pr-4 rounded-xl",
-                        "bg-slate-50/80 border border-slate-200",
-                        "text-slate-900 placeholder:text-slate-400",
+                        "bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800",
+                        "text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500",
                         "focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500",
                         "transition-all",
                         "disabled:opacity-50 disabled:cursor-not-allowed"
@@ -152,7 +152,7 @@ export default function LoginPage() {
                 {/* Password field */}
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <label htmlFor="password" className="text-sm font-medium text-slate-700">
+                    <label htmlFor="password" className="text-sm font-medium text-slate-700 dark:text-slate-300">
                       Password
                     </label>
                     <Link
@@ -172,8 +172,8 @@ export default function LoginPage() {
                       placeholder="Enter your password"
                       className={cn(
                         "w-full h-12 pl-12 pr-4 rounded-xl",
-                        "bg-slate-50/80 border border-slate-200",
-                        "text-slate-900 placeholder:text-slate-400",
+                        "bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800",
+                        "text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500",
                         "focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500",
                         "transition-all",
                         "disabled:opacity-50 disabled:cursor-not-allowed"
@@ -193,7 +193,7 @@ export default function LoginPage() {
                     onChange={(e) => setRememberMe(e.target.checked)}
                     className="w-4 h-4 rounded border-slate-300 text-indigo-500 focus:ring-indigo-500"
                   />
-                  <label htmlFor="rememberMe" className="text-sm text-slate-600">
+                  <label htmlFor="rememberMe" className="text-sm text-slate-600 dark:text-slate-300">
                     Remember me for 30 days
                   </label>
                 </div>
@@ -223,7 +223,7 @@ export default function LoginPage() {
 
               {/* Footer */}
               <div className="mt-6 text-center">
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   Don&apos;t have an account?{" "}
                   <Link
                     href="/register"

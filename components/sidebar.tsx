@@ -23,9 +23,12 @@ import {
   LogOut,
   User,
   LayoutDashboard,
+  Sun,
+  Moon,
 } from "lucide-react"
 import type React from "react"
 import { useAuth } from "@/hooks/useAuth"
+import { useTheme } from "@/components/theme-provider"
 
 const routes = [
   {
@@ -46,6 +49,8 @@ export function Sidebar({ className }: SidebarProps) {
   const [isExpanded, setIsExpanded] = useState(false)
   const pathname = usePathname()
   const { user, isAuthenticated, isLoading, logout } = useAuth()
+  const { theme, setTheme } = useTheme()
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark")
 
   const handleLogout = async () => {
     await logout()
@@ -57,8 +62,8 @@ export function Sidebar({ className }: SidebarProps) {
         className={cn(
           "fixed left-0 top-0 h-screen z-50",
           "flex flex-col",
-          "bg-white/80 backdrop-blur-xl",
-          "border-r border-slate-200/60",
+          "bg-white/80 dark:bg-slate-900/90 backdrop-blur-xl",
+          "border-r border-slate-200/60 dark:border-slate-800/70",
           className
         )}
         initial={false}
@@ -70,7 +75,7 @@ export function Sidebar({ className }: SidebarProps) {
         onMouseLeave={() => setIsExpanded(false)}
       >
         {/* Logo */}
-        <div className="h-16 flex items-center justify-center border-b border-slate-200/60">
+        <div className="h-16 flex items-center justify-center border-b border-slate-200/60 dark:border-slate-800/70 relative">
           <Link href="/" className="flex items-center gap-3">
             <div className="w-9 h-9 flex items-center justify-center">
               <Image
@@ -87,13 +92,32 @@ export function Sidebar({ className }: SidebarProps) {
                   initial={{ opacity: 0, width: 0 }}
                   animate={{ opacity: 1, width: "auto" }}
                   exit={{ opacity: 0, width: 0 }}
-                  className="font-display font-semibold text-slate-900 whitespace-nowrap overflow-hidden"
+                  className="font-display font-semibold text-slate-900 dark:text-slate-100 whitespace-nowrap overflow-hidden"
                 >
                   VidCognify
                 </motion.span>
               )}
             </AnimatePresence>
           </Link>
+          {/* Theme Toggle - always visible in top-right corner */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button
+                onClick={toggleTheme}
+                aria-label="Toggle theme"
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200"
+              >
+                {theme === "dark" ? (
+                  <Sun className="w-4 h-4" />
+                ) : (
+                  <Moon className="w-4 h-4" />
+                )}
+              </button>
+            </TooltipTrigger>
+            <TooltipContent side="right">
+              {theme === "dark" ? "Light mode" : "Dark mode"}
+            </TooltipContent>
+          </Tooltip>
         </div>
 
         {/* Navigation */}
@@ -134,10 +158,10 @@ export function Sidebar({ className }: SidebarProps) {
         </nav>
 
         {/* User section */}
-        <div className="border-t border-slate-200/60 p-2">
+        <div className="border-t border-slate-200/60 dark:border-slate-800/70 p-2">
           {isLoading ? (
             <div className="h-10 flex items-center justify-center">
-              <div className="w-6 h-6 rounded-full bg-slate-200 animate-pulse" />
+              <div className="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 animate-pulse" />
             </div>
           ) : isAuthenticated ? (
             <div className="space-y-1">
@@ -145,11 +169,11 @@ export function Sidebar({ className }: SidebarProps) {
               <div
                 className={cn(
                   "flex items-center gap-3 px-3 py-2 rounded-lg",
-                  "text-slate-500"
+                  "text-slate-500 dark:text-slate-400"
                 )}
               >
-                <div className="w-7 h-7 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                  <User className="w-3.5 h-3.5 text-indigo-600" />
+                <div className="w-7 h-7 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0">
+                  <User className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
                 </div>
                 <AnimatePresence>
                   {isExpanded && (
@@ -172,7 +196,7 @@ export function Sidebar({ className }: SidebarProps) {
                     onClick={handleLogout}
                     className={cn(
                       "w-full flex items-center gap-3 px-3 py-2 rounded-lg",
-                      "text-slate-500 hover:text-slate-700 hover:bg-slate-100",
+                      "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800",
                       "transition-colors duration-200"
                     )}
                   >
@@ -232,8 +256,8 @@ function NavItem({ icon: Icon, label, href, isActive, isExpanded }: NavItemProps
             "flex items-center gap-3 px-3 py-2.5 rounded-xl",
             "transition-all duration-200 relative",
             isActive
-              ? "bg-indigo-50 text-indigo-600"
-              : "text-slate-500 hover:text-slate-700 hover:bg-slate-100"
+              ? "bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400"
+              : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
           )}
         >
           <Icon className="w-5 h-5 flex-shrink-0" />
@@ -267,6 +291,8 @@ export function MobileSidebar() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
   const { user, isAuthenticated, isLoading, logout } = useAuth()
+  const { theme, setTheme } = useTheme()
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark")
 
   // Close sidebar on route change
   useEffect(() => {
@@ -298,7 +324,7 @@ export function MobileSidebar() {
       </SheetTrigger>
       <SheetContent
         side="left"
-        className="w-64 p-0 bg-white border-r border-slate-200/60"
+        className="w-64 p-0 bg-white dark:bg-slate-900 border-r border-slate-200/60 dark:border-slate-800/70"
       >
         <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
         <SheetDescription className="sr-only">Main navigation sidebar</SheetDescription>
@@ -310,7 +336,7 @@ export function MobileSidebar() {
           onDragEnd={handleDragEnd}
         >
         {/* Logo */}
-        <div className="h-16 flex items-center px-6 border-b border-slate-200/60">
+        <div className="h-16 flex items-center px-6 border-b border-slate-200/60 dark:border-slate-800/70">
           <Link href="/" className="flex items-center gap-3">
             <div className="w-9 h-9 flex items-center justify-center">
               <Image
@@ -321,10 +347,22 @@ export function MobileSidebar() {
                 className="w-full h-full object-contain"
               />
             </div>
-            <span className="font-display font-semibold text-slate-900">
+            <span className="font-display font-semibold text-slate-900 dark:text-slate-100">
               VidCognify
             </span>
           </Link>
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="ml-auto w-9 h-9 rounded-xl flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200"
+          >
+            {theme === "dark" ? (
+              <Sun className="w-5 h-5" />
+            ) : (
+              <Moon className="w-5 h-5" />
+            )}
+          </button>
         </div>
 
         {/* Navigation */}
@@ -340,8 +378,8 @@ export function MobileSidebar() {
                     "flex items-center gap-3 px-4 py-3.5 rounded-xl min-h-[48px]",
                     "transition-colors duration-200",
                     isActive
-                      ? "bg-indigo-50 text-indigo-600"
-                      : "text-slate-500 hover:text-slate-700 hover:bg-slate-100"
+                      ? "bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400"
+                      : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
                   )}
                 >
                   <route.icon className="w-5 h-5" />
@@ -357,8 +395,8 @@ export function MobileSidebar() {
                     "flex items-center gap-3 px-4 py-3.5 rounded-xl min-h-[48px]",
                     "transition-colors duration-200",
                     pathname === "/dashboard"
-                      ? "bg-indigo-50 text-indigo-600"
-                      : "text-slate-500 hover:text-slate-700 hover:bg-slate-100"
+                      ? "bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400"
+                      : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
                   )}
                 >
                   <LayoutDashboard className="w-5 h-5" />
@@ -370,8 +408,8 @@ export function MobileSidebar() {
                   "flex items-center gap-3 px-4 py-3.5 rounded-xl min-h-[48px]",
                   "transition-colors duration-200",
                   pathname === "/settings"
-                    ? "bg-indigo-50 text-indigo-600"
-                    : "text-slate-500 hover:text-slate-700 hover:bg-slate-100"
+                    ? "bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400"
+                    : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
                 )}
               >
                 <Settings className="w-5 h-5" />
@@ -383,20 +421,20 @@ export function MobileSidebar() {
         </nav>
 
         {/* User section */}
-        <div className="border-t border-slate-200/60 p-3">
+        <div className="border-t border-slate-200/60 dark:border-slate-800/70 p-3">
           {isLoading ? (
             <div className="h-12 flex items-center justify-center">
-              <div className="w-6 h-6 rounded-full bg-slate-200 animate-pulse" />
+              <div className="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 animate-pulse" />
             </div>
           ) : isAuthenticated ? (
             <div className="space-y-2">
-              <div className="flex items-center gap-3 px-4 py-3 text-slate-500">
+              <div className="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400">
                 <User className="w-4 h-4" />
                 <span className="text-sm truncate">{user?.email}</span>
               </div>
               <button
                 onClick={handleLogout}
-                className="w-full flex items-center gap-3 px-4 py-3.5 rounded-xl min-h-[48px] text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+                className="w-full flex items-center gap-3 px-4 py-3.5 rounded-xl min-h-[48px] text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
               >
                 <LogOut className="w-5 h-5" />
                 <span className="text-sm">Logout</span>
@@ -405,7 +443,7 @@ export function MobileSidebar() {
           ) : (
             <Link
               href="/login"
-              className="flex items-center gap-3 px-4 py-3.5 rounded-xl min-h-[48px] text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+              className="flex items-center gap-3 px-4 py-3.5 rounded-xl min-h-[48px] text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             >
               <LogIn className="w-5 h-5" />
               <span className="text-sm font-medium">Login</span>

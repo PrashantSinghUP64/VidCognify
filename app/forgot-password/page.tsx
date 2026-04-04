@@ -178,7 +178,7 @@ export default function ForgotPasswordPage() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="font-display text-xl font-semibold text-slate-900">
+              <span className="font-display text-xl font-semibold text-slate-900 dark:text-slate-100">
                 VidCognify
               </span>
             </Link>
@@ -190,8 +190,8 @@ export default function ForgotPasswordPage() {
               {step === "email" && (
                 <>
                   <div className="text-center mb-6">
-                    <h1 className="font-display text-2xl font-bold text-slate-900">Reset Password</h1>
-                    <p className="text-slate-500 mt-1">Enter your email to continue</p>
+                    <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-slate-100">Reset Password</h1>
+                    <p className="text-slate-500 dark:text-slate-400 mt-1">Enter your email to continue</p>
                   </div>
 
                   <form onSubmit={handleEmailSubmit} className="space-y-5">
@@ -207,7 +207,7 @@ export default function ForgotPasswordPage() {
                     )}
 
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-slate-700">
+                      <label htmlFor="email" className="text-sm font-medium text-slate-700 dark:text-slate-300">
                         Email
                       </label>
                       <div className="relative">
@@ -220,8 +220,8 @@ export default function ForgotPasswordPage() {
                           placeholder="Enter your email"
                           className={cn(
                             "w-full h-12 pl-12 pr-4 rounded-xl",
-                            "bg-slate-50/80 border border-slate-200",
-                            "text-slate-900 placeholder:text-slate-400",
+                            "bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800",
+                            "text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500",
                             "focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500",
                             "transition-all"
                           )}
@@ -258,11 +258,11 @@ export default function ForgotPasswordPage() {
               {step === "questions" && (
                 <>
                   <div className="text-center mb-6">
-                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-indigo-100 flex items-center justify-center">
-                      <ShieldQuestion className="w-6 h-6 text-indigo-600" />
+                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+                      <ShieldQuestion className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                     </div>
-                    <h1 className="font-display text-2xl font-bold text-slate-900">Security Questions</h1>
-                    <p className="text-slate-500 mt-1">Answer any 2 of your 3 security questions</p>
+                    <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-slate-100">Security Questions</h1>
+                    <p className="text-slate-500 dark:text-slate-400 mt-1">Answer any 2 of your 3 security questions</p>
                   </div>
 
                   <form onSubmit={handleQuestionsSubmit} className="space-y-5">
@@ -278,8 +278,8 @@ export default function ForgotPasswordPage() {
                     )}
 
                     {[0, 1].map((index) => (
-                      <div key={index} className="space-y-3 p-4 bg-slate-50 rounded-xl">
-                        <label className="text-sm font-medium text-slate-700">
+                      <div key={index} className="space-y-3 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl">
+                        <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
                           Question {index + 1}
                         </label>
                         <select
@@ -287,8 +287,8 @@ export default function ForgotPasswordPage() {
                           onChange={(e) => updateSelectedQuestion(index, "id", e.target.value)}
                           className={cn(
                             "w-full h-12 px-4 rounded-xl",
-                            "bg-white border border-slate-200",
-                            "text-slate-900",
+                            "bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800",
+                            "text-slate-900 dark:text-slate-100",
                             "focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500"
                           )}
                           required
@@ -307,8 +307,8 @@ export default function ForgotPasswordPage() {
                           placeholder="Your answer"
                           className={cn(
                             "w-full h-12 px-4 rounded-xl",
-                            "bg-white border border-slate-200",
-                            "text-slate-900 placeholder:text-slate-400",
+                            "bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800",
+                            "text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500",
                             "focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500"
                           )}
                           required
@@ -320,7 +320,7 @@ export default function ForgotPasswordPage() {
                       <button
                         type="button"
                         onClick={() => setStep("email")}
-                        className="flex items-center gap-2 px-4 py-3 text-slate-600 hover:text-slate-900 transition-colors"
+                        className="flex items-center gap-2 px-4 py-3 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                       >
                         <ArrowLeft className="h-4 w-4" />
                         Back
@@ -353,8 +353,8 @@ export default function ForgotPasswordPage() {
               {step === "newPassword" && (
                 <>
                   <div className="text-center mb-6">
-                    <h1 className="font-display text-2xl font-bold text-slate-900">Set New Password</h1>
-                    <p className="text-slate-500 mt-1">Create a strong new password</p>
+                    <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-slate-100">Set New Password</h1>
+                    <p className="text-slate-500 dark:text-slate-400 mt-1">Create a strong new password</p>
                   </div>
 
                   <form onSubmit={handlePasswordSubmit} className="space-y-5">
@@ -370,7 +370,7 @@ export default function ForgotPasswordPage() {
                     )}
 
                     <div className="space-y-2">
-                      <label htmlFor="newPassword" className="text-sm font-medium text-slate-700">
+                      <label htmlFor="newPassword" className="text-sm font-medium text-slate-700 dark:text-slate-300">
                         New Password
                       </label>
                       <div className="relative">
@@ -383,20 +383,20 @@ export default function ForgotPasswordPage() {
                           placeholder="Enter new password"
                           className={cn(
                             "w-full h-12 pl-12 pr-4 rounded-xl",
-                            "bg-slate-50/80 border border-slate-200",
-                            "text-slate-900 placeholder:text-slate-400",
+                            "bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800",
+                            "text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500",
                             "focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500"
                           )}
                           required
                         />
                       </div>
-                      <p className="text-xs text-slate-400">
+                      <p className="text-xs text-slate-400 dark:text-slate-500">
                         Min 6 characters
                       </p>
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="confirmPassword" className="text-sm font-medium text-slate-700">
+                      <label htmlFor="confirmPassword" className="text-sm font-medium text-slate-700 dark:text-slate-300">
                         Confirm Password
                       </label>
                       <div className="relative">
@@ -409,8 +409,8 @@ export default function ForgotPasswordPage() {
                           placeholder="Confirm new password"
                           className={cn(
                             "w-full h-12 pl-12 pr-4 rounded-xl",
-                            "bg-slate-50/80 border border-slate-200",
-                            "text-slate-900 placeholder:text-slate-400",
+                            "bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800",
+                            "text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500",
                             "focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500"
                           )}
                           required
@@ -447,10 +447,10 @@ export default function ForgotPasswordPage() {
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-emerald-100 flex items-center justify-center">
                     <CheckCircle2 className="w-8 h-8 text-emerald-600" />
                   </div>
-                  <h1 className="font-display text-2xl font-bold text-slate-900 mb-2">
+                  <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">
                     Password Reset!
                   </h1>
-                  <p className="text-slate-500 mb-6">
+                  <p className="text-slate-500 dark:text-slate-400 mb-6">
                     Your password has been successfully reset. You can now sign in with your new password.
                   </p>
                   <Link
@@ -465,7 +465,7 @@ export default function ForgotPasswordPage() {
               {/* Footer - Only show on non-success steps */}
               {step !== "success" && (
                 <div className="mt-6 text-center">
-                  <p className="text-sm text-slate-500">
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
                     Remember your password?{" "}
                     <Link
                       href="/login"

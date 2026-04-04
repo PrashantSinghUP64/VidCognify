@@ -60,6 +60,55 @@
 
     --radius: 0.875rem;
   }
+
+  .dark {
+    /* Deep Dark Space Theme */
+    --background: 220 25% 6%;
+    --background-deep: 220 30% 3%;
+    --background-elevated: 220 25% 10%;
+    --background-hover: 220 20% 15%;
+
+    --accent-primary: 245 60% 65%;
+    --accent-primary-bright: 245 70% 75%;
+    --accent-primary-glow: 245 60% 65%;
+
+    --accent-secondary: 175 60% 45%;
+    --accent-secondary-dim: 175 55% 40%;
+
+    --success: 155 60% 45%;
+    --youtube-red: 348 85% 55%;
+
+    --text-primary: 220 20% 95%;
+    --text-secondary: 220 15% 75%;
+    --text-muted: 220 10% 55%;
+
+    --foreground: 220 20% 95%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 220 20% 95%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 220 20% 95%;
+
+    --primary: 245 60% 65%;
+    --primary-foreground: 220 30% 3%;
+
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 220 20% 95%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 175 60% 45%;
+    --accent-foreground: 220 30% 3%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 220 20% 95%;
+
+    --border: 220 20% 15%;
+    --input: 220 20% 15%;
+    --ring: 245 60% 65%;
+  }
 }
 
 @layer base {
@@ -80,15 +129,15 @@
 /* Soft Card Utilities */
 @layer utilities {
   .card-soft {
-    @apply bg-white rounded-2xl border border-slate-200/60 shadow-sm;
+    @apply bg-white dark:bg-[#0f1423] rounded-2xl border border-slate-200/60 dark:border-slate-800/80 shadow-sm;
   }
 
   .card-soft-hover {
-    @apply bg-white rounded-2xl border border-slate-200/60 shadow-sm transition-all duration-300 hover:shadow-md hover:border-slate-300/80;
+    @apply bg-white dark:bg-[#0f1423] rounded-2xl border border-slate-200/60 dark:border-slate-800/80 shadow-sm transition-all duration-300 hover:shadow-md hover:border-slate-300/80 dark:hover:border-slate-700;
   }
 
   .card-elevated {
-    @apply bg-white rounded-2xl border border-slate-100 shadow-lg shadow-slate-200/50;
+    @apply bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-lg shadow-slate-200/50 dark:shadow-black/50;
   }
 
   .glow-primary {
@@ -129,12 +178,29 @@
       hsl(var(--background-deep));
   }
 
+  .dark .gradient-soft {
+    background:
+      radial-gradient(ellipse 60% 40% at 20% 10%, hsl(245 60% 30% / 0.12), transparent),
+      radial-gradient(ellipse 50% 50% at 80% 20%, hsl(175 60% 25% / 0.10), transparent),
+      radial-gradient(ellipse 70% 60% at 60% 80%, hsl(280 50% 25% / 0.08), transparent),
+      hsl(var(--background-deep));
+  }
+
   .gradient-soft-animated {
     background:
       radial-gradient(ellipse 60% 40% at 20% 10%, hsl(260 60% 92% / 0.7), transparent),
       radial-gradient(ellipse 50% 50% at 80% 20%, hsl(175 50% 90% / 0.6), transparent),
       radial-gradient(ellipse 70% 60% at 60% 80%, hsl(320 50% 92% / 0.5), transparent),
       radial-gradient(ellipse 40% 40% at 10% 70%, hsl(220 60% 94% / 0.6), transparent),
+      hsl(var(--background-deep));
+    animation: gradient-breathe 15s ease-in-out infinite;
+  }
+
+  .dark .gradient-soft-animated {
+    background:
+      radial-gradient(ellipse 60% 40% at 20% 10%, hsl(245 60% 30% / 0.15), transparent),
+      radial-gradient(ellipse 50% 50% at 80% 20%, hsl(175 60% 25% / 0.12), transparent),
+      radial-gradient(ellipse 70% 60% at 60% 80%, hsl(280 50% 25% / 0.10), transparent),
       hsl(var(--background-deep));
     animation: gradient-breathe 15s ease-in-out infinite;
   }

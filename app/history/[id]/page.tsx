@@ -244,12 +244,12 @@ export default function HistoryDetailPage({ params }: PageProps) {
   return (
     <div className="min-h-screen gradient-soft">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-200/50">
+      <header className="sticky top-0 z-50 bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Button
               variant="ghost"
-              className="text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 rounded-full"
+              className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/80 rounded-full"
               onClick={() => router.push("/history")}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
@@ -262,7 +262,7 @@ export default function HistoryDetailPage({ params }: PageProps) {
                   variant="ghost"
                   size="sm"
                   onClick={() => setShowFullSummary(!showFullSummary)}
-                  className="text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 rounded-full"
+                  className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/80 rounded-full"
                 >
                   <BookOpen className="w-4 h-4 mr-2" />
                   {showFullSummary ? "Structured View" : "Full Text"}
@@ -273,7 +273,7 @@ export default function HistoryDetailPage({ params }: PageProps) {
                 size="sm"
                 onClick={handleExport}
                 disabled={!summary}
-                className="text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 rounded-full"
+                className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/80 rounded-full"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Export
@@ -370,20 +370,20 @@ export default function HistoryDetailPage({ params }: PageProps) {
               {/* Chapters & Transcript Tabs */}
               <div className="card-soft">
                 {/* Tab Headers */}
-                <div className="flex border-b border-slate-100">
+                <div className="flex border-b border-slate-100 dark:border-slate-800">
                   <button
                     onClick={() => setActiveTab("chapters")}
                     className={cn(
                       "flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all border-b-2 -mb-px",
                       activeTab === "chapters"
-                        ? "text-indigo-600 border-indigo-500"
-                        : "text-slate-500 border-transparent hover:text-slate-700"
+                        ? "text-indigo-600 dark:text-indigo-400 border-indigo-500"
+                        : "text-slate-500 dark:text-slate-400 border-transparent hover:text-slate-700 dark:hover:text-slate-200"
                     )}
                   >
                     <Layers className="w-4 h-4" />
                     Chapters
                     {displayTopics.length > 0 && (
-                      <span className="bg-slate-100 text-slate-600 text-xs px-2 py-0.5 rounded-full">
+                      <span className="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs px-2 py-0.5 rounded-full">
                         {displayTopics.length}
                       </span>
                     )}
@@ -393,8 +393,8 @@ export default function HistoryDetailPage({ params }: PageProps) {
                     className={cn(
                       "flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all border-b-2 -mb-px",
                       activeTab === "transcript"
-                        ? "text-indigo-600 border-indigo-500"
-                        : "text-slate-500 border-transparent hover:text-slate-700"
+                        ? "text-indigo-600 dark:text-indigo-400 border-indigo-500"
+                        : "text-slate-500 dark:text-slate-400 border-transparent hover:text-slate-700 dark:hover:text-slate-200"
                     )}
                   >
                     <FileText className="w-4 h-4" />
@@ -445,15 +445,15 @@ export default function HistoryDetailPage({ params }: PageProps) {
             {/* Right Column - Summary Only */}
             <motion.div variants={itemVariants} className="lg:col-span-3">
               <div className="card-soft h-full">
-                <div className="p-5 border-b border-slate-100">
+                <div className="p-5 border-b border-slate-100 dark:border-slate-800">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-teal-400 flex items-center justify-center shadow-lg shadow-indigo-200">
                         <FileText className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h2 className="font-semibold text-slate-900">Summary</h2>
-                        <p className="text-xs text-slate-500">AI-generated insights</p>
+                        <h2 className="font-semibold text-slate-900 dark:text-slate-100">Summary</h2>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">AI-generated insights</p>
                       </div>
                     </div>
                   </div>
@@ -464,14 +464,14 @@ export default function HistoryDetailPage({ params }: PageProps) {
                     useStructuredView && !showFullSummary ? (
                       <div className="space-y-6">
                         {parsedSummary.title && (
-                          <h1 className="text-xl font-bold text-slate-900">
+                          <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                             {parsedSummary.title}
                           </h1>
                         )}
 
                         {parsedSummary.overview && (
-                          <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                            <p className="text-slate-600 leading-relaxed">
+                          <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-700/60">
+                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                               {parsedSummary.overview}
                             </p>
                           </div>
@@ -481,7 +481,7 @@ export default function HistoryDetailPage({ params }: PageProps) {
                           <div className="space-y-3">
                             <div className="flex items-center gap-2">
                               <Star className="w-4 h-4 text-amber-500" />
-                              <h3 className="text-sm font-semibold text-slate-700 uppercase tracking-wide">
+                              <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wide">
                                 Recommended to Watch
                               </h3>
                             </div>
@@ -489,7 +489,7 @@ export default function HistoryDetailPage({ params }: PageProps) {
                               {parsedSummary.recommendedChapters.map((rec, index) => (
                                 <div
                                   key={index}
-                                  className="flex items-start gap-3 p-3 bg-amber-50/50 rounded-lg border border-amber-100"
+                                  className="flex items-start gap-3 p-3 bg-amber-50/50 dark:bg-amber-900/10 rounded-lg border border-amber-100 dark:border-amber-900/30"
                                 >
                                   <Star className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
                                   <div className="flex-1">
@@ -507,7 +507,7 @@ export default function HistoryDetailPage({ params }: PageProps) {
                                       <span className="font-medium text-amber-700">{rec.name}</span>
                                     )}
                                     {rec.reason && (
-                                      <p className="text-sm text-amber-600 mt-0.5">{rec.reason}</p>
+                                      <p className="text-sm text-amber-600 dark:text-amber-400 mt-0.5">{rec.reason}</p>
                                     )}
                                   </div>
                                 </div>
@@ -520,7 +520,7 @@ export default function HistoryDetailPage({ params }: PageProps) {
                           <div className="space-y-3">
                             <div className="flex items-center gap-2">
                               <Layers className="w-4 h-4 text-indigo-500" />
-                              <h3 className="text-sm font-semibold text-slate-700 uppercase tracking-wide">
+                              <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wide">
                                 Chapter Summaries
                               </h3>
                             </div>
@@ -542,10 +542,10 @@ export default function HistoryDetailPage({ params }: PageProps) {
                         )}
 
                         {parsedSummary.conclusion && (
-                          <div className="p-4 bg-gradient-to-r from-indigo-50 to-teal-50 rounded-xl border border-indigo-100">
+                          <div className="p-4 bg-gradient-to-r from-indigo-50 to-teal-50 dark:from-indigo-900/20 dark:to-teal-900/20 rounded-xl border border-indigo-100 dark:border-indigo-900/40">
                             <div className="flex items-center gap-2 mb-2">
-                              <FileText className="w-4 h-4 text-indigo-500" />
-                              <h3 className="text-sm font-semibold text-indigo-700 uppercase tracking-wide">
+                              <FileText className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
+                              <h3 className="text-sm font-semibold text-indigo-700 dark:text-indigo-300 uppercase tracking-wide">
                                 Key Takeaways
                               </h3>
                             </div>

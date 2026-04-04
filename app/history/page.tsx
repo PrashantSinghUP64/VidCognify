@@ -186,7 +186,7 @@ export default function HistoryPage() {
       <div className="min-h-screen gradient-soft-animated p-4 md:p-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4 text-slate-900">
+            <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4 text-slate-900 dark:text-slate-100">
               Summary
               <span className="text-gradient"> History</span>
             </h1>
@@ -209,7 +209,7 @@ export default function HistoryPage() {
       <div className="min-h-screen gradient-soft-animated p-4 md:p-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4 text-slate-900">
+            <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4 text-slate-900 dark:text-slate-100">
               Summary
               <span className="text-gradient"> History</span>
             </h1>
@@ -234,11 +234,11 @@ export default function HistoryPage() {
       >
         {/* Header */}
         <motion.div variants={itemVariants} className="text-center mb-10">
-          <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4 text-slate-900">
+          <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4 text-slate-900 dark:text-slate-100">
             Summary
             <span className="text-gradient"> History</span>
           </h1>
-          <p className="text-slate-500 mt-3 text-base max-w-md mx-auto">
+          <p className="text-slate-500 dark:text-slate-400 mt-3 text-base max-w-md mx-auto">
             Browse and manage your previously generated video summaries
           </p>
         </motion.div>
@@ -255,7 +255,7 @@ export default function HistoryPage() {
                   placeholder="Search summaries..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full h-14 pl-12 pr-4 rounded-xl bg-slate-50/80 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
+                  className="w-full h-14 pl-12 pr-4 rounded-xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
                 />
               </div>
 
@@ -267,10 +267,10 @@ export default function HistoryPage() {
         {filteredSummaries.length === 0 ? (
           <motion.div variants={itemVariants}>
             <div className="card-elevated p-12 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 mb-4">
-                <History className="w-8 h-8 text-slate-400" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 mb-4">
+                <History className="w-8 h-8 text-slate-400 dark:text-slate-500" />
               </div>
-              <p className="text-slate-500">
+              <p className="text-slate-500 dark:text-slate-400">
                 {searchQuery
                   ? "No summaries match your search"
                   : "No summaries yet. Try summarizing some videos!"}

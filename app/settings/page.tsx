@@ -268,11 +268,11 @@ export default function SettingsPage() {
             return (
               <div
                 key={service}
-                className="bg-white rounded-2xl p-6 border border-slate-200/60 shadow-sm"
+                className="bg-white dark:bg-slate-800/60 rounded-2xl p-6 border border-slate-200/60 dark:border-slate-700/60 shadow-sm"
               >
                 {/* Service Header */}
                 <div className="flex flex-wrap items-center gap-2 mb-4">
-                  <span className="font-semibold text-slate-900">
+                  <span className="font-semibold text-slate-900 dark:text-slate-100">
                     {keyInfo?.displayName || service}
                   </span>
                   {keyInfo?.configured ? (
@@ -286,14 +286,14 @@ export default function SettingsPage() {
                   ) : (
                     <span className={cn(
                       "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium",
-                      "bg-slate-200/50 text-slate-500"
+                      "bg-slate-200/50 dark:bg-slate-700/60 text-slate-500 dark:text-slate-400"
                     )}>
                       <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
                       Not configured
                     </span>
                   )}
                   {keyInfo?.masked && (
-                    <code className="text-xs bg-slate-100 px-2 py-1 rounded font-mono text-slate-500 truncate max-w-[120px] sm:max-w-none">
+                    <code className="text-xs bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded font-mono text-slate-500 dark:text-slate-300 truncate max-w-[120px] sm:max-w-none">
                       {keyInfo.masked}
                     </code>
                   )}
@@ -301,7 +301,7 @@ export default function SettingsPage() {
 
                 {/* Description and Link */}
                 <div className="flex items-center justify-between mb-4">
-                  <p className="text-sm text-slate-500">
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
                     {serviceInfo.description}
                   </p>
                   <a
@@ -323,12 +323,12 @@ export default function SettingsPage() {
                       value={state.value}
                       onChange={(e) => updateApiKeyValue(service, e.target.value)}
                       placeholder={keyInfo?.configured ? "Enter new key to update" : "Enter API key"}
-                      className="pr-10 bg-white border-slate-200"
+                      className="pr-10 bg-white dark:bg-slate-900/50 border-slate-200 dark:border-slate-700"
                     />
                     <button
                       type="button"
                       onClick={() => toggleShowPassword(service)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
                     >
                       {state.showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                     </button>
@@ -393,8 +393,8 @@ export default function SettingsPage() {
                 <Settings className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="font-display text-xl font-bold text-slate-900">Settings</h1>
-                <p className="text-sm text-slate-500 hidden sm:block">Manage your API keys</p>
+                <h1 className="font-display text-xl font-bold text-slate-900 dark:text-slate-100">Settings</h1>
+                <p className="text-sm text-slate-500 dark:text-slate-400 hidden sm:block">Manage your API keys</p>
               </div>
             </div>
           </motion.div>

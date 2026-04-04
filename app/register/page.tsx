@@ -197,7 +197,7 @@ export default function RegisterPage() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="font-display text-xl font-semibold text-slate-900">
+              <span className="font-display text-xl font-semibold text-slate-900 dark:text-slate-100">
                 VidCognify
               </span>
             </Link>
@@ -224,7 +224,7 @@ export default function RegisterPage() {
                       "flex items-center justify-center w-8 h-8 rounded-full text-sm font-medium transition-colors",
                       step === "security"
                         ? "bg-gradient-to-r from-accent-primary to-accent-secondary text-white"
-                        : "bg-slate-100 text-slate-400"
+                        : "bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500"
                     )}
                   >
                     2
@@ -236,8 +236,8 @@ export default function RegisterPage() {
               {step === "credentials" && (
                 <>
                   <div className="text-center mb-6">
-                    <h1 className="font-display text-2xl font-bold text-slate-900">Create an account</h1>
-                    <p className="text-slate-500 mt-1">Enter your details to get started</p>
+                    <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-slate-100">Create an account</h1>
+                    <p className="text-slate-500 dark:text-slate-400 mt-1">Enter your details to get started</p>
                   </div>
 
                   <form onSubmit={handleCredentialsSubmit} className="space-y-5">
@@ -254,7 +254,7 @@ export default function RegisterPage() {
 
                     {/* Email field */}
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-slate-700">
+                      <label htmlFor="email" className="text-sm font-medium text-slate-700 dark:text-slate-300">
                         Email
                       </label>
                       <div className="relative">
@@ -267,8 +267,8 @@ export default function RegisterPage() {
                           placeholder="Enter your email"
                           className={cn(
                             "w-full h-12 pl-12 pr-4 rounded-xl",
-                            "bg-slate-50/80 border border-slate-200",
-                            "text-slate-900 placeholder:text-slate-400",
+                            "bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800",
+                            "text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500",
                             "focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500",
                             "transition-all"
                           )}
@@ -279,7 +279,7 @@ export default function RegisterPage() {
 
                     {/* Password field */}
                     <div className="space-y-2">
-                      <label htmlFor="password" className="text-sm font-medium text-slate-700">
+                      <label htmlFor="password" className="text-sm font-medium text-slate-700 dark:text-slate-300">
                         Password
                       </label>
                       <div className="relative">
@@ -292,8 +292,8 @@ export default function RegisterPage() {
                           placeholder="Create a password"
                           className={cn(
                             "w-full h-12 pl-12 pr-4 rounded-xl",
-                            "bg-slate-50/80 border border-slate-200",
-                            "text-slate-900 placeholder:text-slate-400",
+                            "bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800",
+                            "text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500",
                             "focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500",
                             "transition-all"
                           )}
@@ -314,7 +314,7 @@ export default function RegisterPage() {
 
                     {/* Confirm Password field */}
                     <div className="space-y-2">
-                      <label htmlFor="confirmPassword" className="text-sm font-medium text-slate-700">
+                      <label htmlFor="confirmPassword" className="text-sm font-medium text-slate-700 dark:text-slate-300">
                         Confirm Password
                       </label>
                       <div className="relative">
@@ -327,8 +327,8 @@ export default function RegisterPage() {
                           placeholder="Confirm your password"
                           className={cn(
                             "w-full h-12 pl-12 pr-4 rounded-xl",
-                            "bg-slate-50/80 border border-slate-200",
-                            "text-slate-900 placeholder:text-slate-400",
+                            "bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800",
+                            "text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500",
                             "focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500",
                             "transition-all"
                           )}
@@ -359,11 +359,11 @@ export default function RegisterPage() {
               {step === "security" && (
                 <>
                   <div className="text-center mb-6">
-                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-indigo-100 flex items-center justify-center">
-                      <ShieldQuestion className="w-6 h-6 text-indigo-600" />
+                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+                      <ShieldQuestion className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                     </div>
-                    <h1 className="font-display text-2xl font-bold text-slate-900">Security Questions</h1>
-                    <p className="text-slate-500 mt-1">Set up 3 questions for password recovery</p>
+                    <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-slate-100">Security Questions</h1>
+                    <p className="text-slate-500 dark:text-slate-400 mt-1">Set up 3 questions for password recovery</p>
                   </div>
 
                   <form onSubmit={handleSecuritySubmit} className="space-y-4">
@@ -379,8 +379,8 @@ export default function RegisterPage() {
                     )}
 
                     {[0, 1, 2].map((index) => (
-                      <div key={index} className="space-y-2 p-3 bg-slate-50 rounded-xl">
-                        <label className="text-sm font-medium text-slate-700">
+                      <div key={index} className="space-y-2 p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl">
+                        <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
                           Question {index + 1}
                         </label>
                         <select
@@ -388,8 +388,8 @@ export default function RegisterPage() {
                           onChange={(e) => updateSelectedQuestion(index, "id", e.target.value)}
                           className={cn(
                             "w-full h-10 px-3 rounded-lg",
-                            "bg-white border border-slate-200",
-                            "text-slate-900 text-sm",
+                            "bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800",
+                            "text-slate-900 dark:text-slate-100 text-sm",
                             "focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500"
                           )}
                           required
@@ -412,8 +412,8 @@ export default function RegisterPage() {
                           placeholder="Your answer"
                           className={cn(
                             "w-full h-10 px-3 rounded-lg",
-                            "bg-white border border-slate-200",
-                            "text-slate-900 placeholder:text-slate-400 text-sm",
+                            "bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800",
+                            "text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 text-sm",
                             "focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500"
                           )}
                           required
@@ -425,7 +425,7 @@ export default function RegisterPage() {
                       <button
                         type="button"
                         onClick={() => setStep("credentials")}
-                        className="px-4 py-3 text-sm text-slate-600 hover:text-slate-900 transition-colors"
+                        className="px-4 py-3 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                         disabled={isLoading}
                       >
                         Back
@@ -456,7 +456,7 @@ export default function RegisterPage() {
 
               {/* Footer */}
               <div className="mt-6 text-center">
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   Already have an account?{" "}
                   <Link
                     href="/login"

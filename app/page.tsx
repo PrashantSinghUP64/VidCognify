@@ -123,14 +123,14 @@ export default function Home() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="font-display text-xl font-semibold text-slate-900">
+              <span className="font-display text-xl font-semibold text-slate-900 dark:text-slate-100">
                 VidCognify
               </span>
             </div>
             <div className="flex items-center gap-3">
               <Link
                 href="/login"
-                className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+                className="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
               >
                 Sign in
               </Link>
@@ -151,11 +151,11 @@ export default function Home() {
             animate="visible"
           >
             <motion.div variants={itemVariants} className="text-center mb-12">
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-6">
                 Transform YouTube videos into
                 <span className="text-gradient"> intelligent summaries</span>
               </h1>
-              <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+              <p className="text-slate-500 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-8">
                 Get AI-powered chapter-based summaries with timestamps, topic detection, and multi-language support. Save hours of watching time.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -169,7 +169,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/login"
-                  className="inline-flex items-center gap-2 px-8 py-4 text-lg font-medium text-slate-600 hover:text-slate-900 transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-4 text-lg font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                 >
                   Already have an account? Sign in
                 </Link>
@@ -182,10 +182,10 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-indigo-500/5 flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-indigo-500" />
                 </div>
-                <h3 className="font-display text-lg font-semibold text-slate-900 mb-2">
+                <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2">
                   AI-Powered Analysis
                 </h3>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   Choose from multiple LLM providers including Claude, Gemini, and GLM for intelligent summarization.
                 </p>
               </GlassCard>
@@ -194,10 +194,10 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500/20 to-teal-500/5 flex items-center justify-center mb-4">
                   <Clock className="w-6 h-6 text-teal-500" />
                 </div>
-                <h3 className="font-display text-lg font-semibold text-slate-900 mb-2">
+                <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2">
                   Chapter Detection
                 </h3>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   Automatically detect topics and chapters with precise timestamps for easy navigation.
                 </p>
               </GlassCard>
@@ -206,10 +206,10 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500/20 to-violet-500/5 flex items-center justify-center mb-4">
                   <BookOpen className="w-6 h-6 text-violet-500" />
                 </div>
-                <h3 className="font-display text-lg font-semibold text-slate-900 mb-2">
+                <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2">
                   Multi-Language
                 </h3>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   Generate summaries in your preferred language, regardless of the video&apos;s original language.
                 </p>
               </GlassCard>
@@ -234,11 +234,11 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-8">
             {/* Headline */}
             <motion.div variants={itemVariants} className="text-center">
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
                 Vid
                 <span className="text-gradient">Cognify</span>
               </h1>
-              <p className="text-slate-500 mt-4 text-lg">
+              <p className="text-slate-500 dark:text-slate-400 mt-4 text-lg">
                 Transform any YouTube video into a concise, chapter-based summary with intelligent topic detection
               </p>
             </motion.div>
@@ -262,7 +262,7 @@ export default function Home() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Model Selector */}
                     <div>
-                      <label className="text-sm font-medium text-slate-700 mb-2 block">
+                      <label className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 block">
                         AI Model
                       </label>
                       <ModelDropdown
@@ -273,7 +273,7 @@ export default function Home() {
 
                     {/* Language Selector */}
                     <div>
-                      <label className="text-sm font-medium text-slate-700 mb-2 block">
+                      <label className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 block">
                         Summary Language
                       </label>
                       <LanguageDropdown

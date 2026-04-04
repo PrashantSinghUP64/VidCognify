@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useAuth } from "@/hooks/useAuth"
 import { LogIn, LogOut, Settings, User } from "lucide-react"
+import { ThemeToggle } from "./theme-toggle"
 
 export function Header() {
   const { user, isAuthenticated, isLoading, logout } = useAuth()
@@ -18,6 +19,8 @@ export function Header() {
 
       {/* Auth controls on right side */}
       <div className="ml-auto flex items-center gap-2">
+        <ThemeToggle />
+        
         {isLoading ? (
           <span className="text-sm text-muted-foreground">Loading...</span>
         ) : isAuthenticated ? (
