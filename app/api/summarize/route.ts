@@ -337,9 +337,12 @@ export async function POST(req: NextRequest) {
           }))
         : [];
 
-      // Save to database
-      const savedSummary = await prisma.summary.create({
-        data: {
+      // Save to database (upsert so re-summarizing the same video never crashes)
+      const savedSummary = await prisma.summary.upsert({
+        where: {
+          videoId_userId_language: { videoId, userId, language },
+        },
+        create: {
           videoId,
           userId,
           language,
@@ -360,6 +363,29 @@ export async function POST(req: NextRequest) {
             })),
           },
           transcriptSegments: {
+            create: transcriptSegmentsData,
+          },
+        },
+        update: {
+          title,
+          content: summary,
+          transcript: transcriptText,
+          hasTimestamps,
+          sentiment: metrics?.sentiment,
+          difficulty: metrics?.difficulty,
+          category: metrics?.category,
+          keywords: metrics?.keywords?.join(","),
+          topics: {
+            deleteMany: {},
+            create: topics.map((topic) => ({
+              title: topic.title,
+              startMs: topic.startMs,
+              endMs: topic.endMs,
+              order: topic.order,
+            })),
+          },
+          transcriptSegments: {
+            deleteMany: {},
             create: transcriptSegmentsData,
           },
         },

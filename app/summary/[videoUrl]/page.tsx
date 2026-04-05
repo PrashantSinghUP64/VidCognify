@@ -21,6 +21,10 @@ import {
   Bot,
   User,
   Loader2,
+  GraduationCap,
+  CheckCircle2,
+  XCircle,
+  RefreshCw,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ProgressStagesEnhanced, type Stage } from "@/components/progress-stages-enhanced"
@@ -94,6 +98,77 @@ export default function SummaryPage({ params }: PageProps) {
   const [chatMessages, setChatMessages] = useState<{role: 'user'|'assistant', content: string}[]>([])
   const [chatInput, setChatInput] = useState("")
   const [isChatLoading, setIsChatLoading] = useState(false)
+
+  // Quiz feature state
+  interface QuizQuestion {
+    question: string
+    options: [string, string, string, string]
+    correct: "A" | "B" | "C" | "D"
+  }
+  const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([])
+  const [quizLoading, setQuizLoading] = useState(false)
+  const [quizError, setQuizError] = useState<string | null>(null)
+  const [quizStarted, setQuizStarted] = useState(false)
+  const [userAnswers, setUserAnswers] = useState<("A" | "B" | "C" | "D" | null)[]>([])
+  const [quizSubmitted, setQuizSubmitted] = useState(false)
+
+  const handleGenerateQuiz = async () => {
+    setQuizLoading(true)
+    setQuizError(null)
+    setQuizQuestions([])
+    setUserAnswers([])
+    setQuizSubmitted(false)
+    setQuizStarted(false)
+    try {
+      const token = localStorage.getItem("token")
+      const response = await fetch("/api/quiz", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ videoUrl: Array.isArray(videoUrl) ? videoUrl[0] : videoUrl }),
+      })
+      const data = await response.json()
+      if (!response.ok) {
+        setQuizError(data.error || "Failed to generate quiz")
+        return
+      }
+      setQuizQuestions(data.questions || [])
+      setUserAnswers(new Array(data.questions.length).fill(null))
+      setQuizStarted(true)
+    } catch {
+      setQuizError("Network error. Please try again.")
+    } finally {
+      setQuizLoading(false)
+    }
+  }
+
+  const handleSelectAnswer = (qIdx: number, answer: "A" | "B" | "C" | "D") => {
+    if (quizSubmitted) return
+    setUserAnswers(prev => {
+      const updated = [...prev]
+      updated[qIdx] = answer
+      return updated
+    })
+  }
+
+  const handleSubmitQuiz = () => {
+    if (userAnswers.some(a => a === null)) return
+    setQuizSubmitted(true)
+  }
+
+  const handleResetQuiz = () => {
+    setQuizQuestions([])
+    setUserAnswers([])
+    setQuizSubmitted(false)
+    setQuizStarted(false)
+    setQuizError(null)
+  }
+
+  const quizScore = quizSubmitted
+    ? quizQuestions.filter((q, i) => userAnswers[i] === q.correct).length
+    : 0
 
   const handleChatSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -762,6 +837,164 @@ export default function SummaryPage({ params }: PageProps) {
                           </form>
                         </div>
                       </div>
+                    </div>
+                  )}
+
+                  {/* Quiz Generator Section */}
+                  {summary && summary.content && (
+                    <div className="mt-10 border-t border-slate-200/60 dark:border-slate-800/60 pt-8" id="quiz-section">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-10 h-10 rounded-xl bg-teal-100 dark:bg-teal-900/40 flex items-center justify-center">
+                          <GraduationCap className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Quiz Generator</h3>
+                          <p className="text-sm text-slate-500 dark:text-slate-400">Test your understanding of the video content.</p>
+                        </div>
+                      </div>
+
+                      {!quizStarted && !quizLoading && (
+                        <div className="text-center py-8 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200/60 dark:border-slate-800/80">
+                          <GraduationCap className="w-12 h-12 mx-auto mb-3 text-teal-400 dark:text-teal-500 opacity-60" />
+                          <p className="text-sm text-slate-500 dark:text-slate-400 mb-5 max-w-xs mx-auto">
+                            Generate 5 multiple choice questions based on this video to test your knowledge.
+                          </p>
+                          {quizError && (
+                            <p className="text-sm text-red-500 dark:text-red-400 mb-4 flex items-center justify-center gap-1">
+                              <AlertCircle className="w-4 h-4" />{quizError}
+                            </p>
+                          )}
+                          <button
+                            onClick={handleGenerateQuiz}
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-indigo-500 text-white font-semibold text-sm hover:opacity-90 transition-opacity shadow-md shadow-teal-200 dark:shadow-teal-900/30"
+                          >
+                            <GraduationCap className="w-4 h-4" />
+                            Generate Quiz
+                          </button>
+                        </div>
+                      )}
+
+                      {quizLoading && (
+                        <div className="text-center py-10 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200/60 dark:border-slate-800/80">
+                          <Loader2 className="w-8 h-8 animate-spin text-teal-500 mx-auto mb-3" />
+                          <p className="text-sm text-slate-500 dark:text-slate-400">Generating quiz questions...</p>
+                        </div>
+                      )}
+
+                      {quizStarted && !quizLoading && quizQuestions.length > 0 && (
+                        <div className="space-y-5">
+                          {quizSubmitted && (
+                            <div className={cn(
+                              "flex items-center justify-between p-5 rounded-2xl border",
+                              quizScore >= 4
+                                ? "bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800/40"
+                                : quizScore >= 3
+                                ? "bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800/40"
+                                : "bg-rose-50 dark:bg-rose-900/20 border-rose-200 dark:border-rose-800/40"
+                            )}>
+                              <div>
+                                <p className={cn(
+                                  "text-2xl font-bold",
+                                  quizScore >= 4 ? "text-emerald-700 dark:text-emerald-300"
+                                  : quizScore >= 3 ? "text-amber-700 dark:text-amber-300"
+                                  : "text-rose-700 dark:text-rose-300"
+                                )}>
+                                  {quizScore}/{quizQuestions.length} Correct!
+                                </p>
+                                <p className="text-sm mt-0.5 text-slate-600 dark:text-slate-400">
+                                  {quizScore === quizQuestions.length ? "Perfect score! 🎉" : quizScore >= 3 ? "Good job! 👍" : "Keep watching and try again! 💪"}
+                                </p>
+                              </div>
+                              <button
+                                onClick={handleResetQuiz}
+                                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+                              >
+                                <RefreshCw className="w-4 h-4" />
+                                Retake
+                              </button>
+                            </div>
+                          )}
+
+                          {quizQuestions.map((q, qIdx) => {
+                            const userAnswer = userAnswers[qIdx]
+                            const isCorrect = quizSubmitted && userAnswer === q.correct
+                            const isWrong = quizSubmitted && userAnswer !== null && userAnswer !== q.correct
+                            const optionLetters: ("A" | "B" | "C" | "D")[] = ["A", "B", "C", "D"]
+                            return (
+                              <div
+                                key={qIdx}
+                                className={cn(
+                                  "p-5 rounded-2xl border transition-all",
+                                  quizSubmitted && isCorrect
+                                    ? "bg-emerald-50 dark:bg-emerald-900/10 border-emerald-200 dark:border-emerald-800/40"
+                                    : quizSubmitted && isWrong
+                                    ? "bg-rose-50 dark:bg-rose-900/10 border-rose-200 dark:border-rose-800/40"
+                                    : "bg-white dark:bg-slate-800/60 border-slate-200/60 dark:border-slate-700/60"
+                                )}
+                              >
+                                <div className="flex items-start gap-3 mb-4">
+                                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 text-xs font-bold flex items-center justify-center">
+                                    {qIdx + 1}
+                                  </span>
+                                  <p className="font-medium text-slate-900 dark:text-slate-100 leading-snug">{q.question}</p>
+                                  {quizSubmitted && (
+                                    isCorrect
+                                      ? <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 ml-auto" />
+                                      : <XCircle className="w-5 h-5 text-rose-500 flex-shrink-0 ml-auto" />
+                                  )}
+                                </div>
+
+                                <div className="grid grid-cols-1 gap-2 pl-10">
+                                  {optionLetters.map((letter, oIdx) => {
+                                    const isSelected = userAnswer === letter
+                                    const isThisCorrect = q.correct === letter
+                                    let optStyle = "bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-teal-400 dark:hover:border-teal-600 hover:bg-teal-50 dark:hover:bg-teal-900/10"
+                                    if (!quizSubmitted && isSelected) {
+                                      optStyle = "bg-teal-100 dark:bg-teal-900/30 border-teal-500 dark:border-teal-600 text-teal-800 dark:text-teal-200"
+                                    } else if (quizSubmitted && isThisCorrect) {
+                                      optStyle = "bg-emerald-100 dark:bg-emerald-900/30 border-emerald-500 dark:border-emerald-600 text-emerald-800 dark:text-emerald-200 font-semibold"
+                                    } else if (quizSubmitted && isSelected && !isThisCorrect) {
+                                      optStyle = "bg-rose-100 dark:bg-rose-900/30 border-rose-500 dark:border-rose-600 text-rose-800 dark:text-rose-200 line-through opacity-70"
+                                    }
+                                    return (
+                                      <button
+                                        key={letter}
+                                        onClick={() => handleSelectAnswer(qIdx, letter)}
+                                        disabled={quizSubmitted}
+                                        className={cn(
+                                          "w-full text-left px-4 py-2.5 rounded-xl border text-sm transition-all duration-150",
+                                          optStyle,
+                                          !quizSubmitted && "cursor-pointer",
+                                          quizSubmitted && "cursor-default"
+                                        )}
+                                      >
+                                        <span className="font-bold mr-2">{letter}.</span>
+                                        {q.options[oIdx]}
+                                      </button>
+                                    )
+                                  })}
+                                </div>
+
+                                {quizSubmitted && isWrong && (
+                                  <p className="mt-3 pl-10 text-sm text-slate-500 dark:text-slate-400">
+                                    ✅ Correct answer: <span className="font-semibold text-emerald-700 dark:text-emerald-300">{q.correct}. {q.options[["A","B","C","D"].indexOf(q.correct)]}</span>
+                                  </p>
+                                )}
+                              </div>
+                            )
+                          })}
+
+                          {!quizSubmitted && (
+                            <button
+                              onClick={handleSubmitQuiz}
+                              disabled={userAnswers.some(a => a === null)}
+                              className="w-full py-3 rounded-xl bg-gradient-to-r from-teal-500 to-indigo-500 text-white font-semibold text-sm hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity"
+                            >
+                              Submit Answers
+                            </button>
+                          )}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
