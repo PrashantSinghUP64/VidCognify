@@ -29,6 +29,7 @@ import {
   Printer,
   Highlighter,
   Trash2,
+  Lightbulb,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ProgressStagesEnhanced, type Stage } from "@/components/progress-stages-enhanced"
@@ -90,6 +91,13 @@ interface Highlight {
   note?: string | null
   color: string
   createdAt: string
+}
+
+interface LearningPathVideo {
+  videoId: string
+  title: string
+  channelName: string
+  thumbnail: string
 }
 
 interface PageProps {
@@ -318,8 +326,32 @@ export default function SummaryPage({ params }: PageProps) {
     }
   }
 
+  // Learning Path state
+  const [learningPath, setLearningPath] = useState<LearningPathVideo[]>([])
+  const [learningPathLoading, setLearningPathLoading] = useState(true)
+
+  const fetchLearningPath = async () => {
+    try {
+      setLearningPathLoading(true)
+      const token = localStorage.getItem("token")
+      const safeVideoUrl = Array.isArray(videoUrl) ? videoUrl[0] : videoUrl
+      const response = await fetch(`/api/learning-path?videoUrl=${encodeURIComponent(safeVideoUrl)}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      if (response.ok) {
+        const data = await response.json()
+        setLearningPath(data.videos || [])
+      }
+    } catch (error) {
+      console.error("Failed to fetch learning path", error)
+    } finally {
+      setLearningPathLoading(false)
+    }
+  }
+
   useEffect(() => {
     fetchHighlights()
+    fetchLearningPath()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [videoUrl])
 
@@ -1367,6 +1399,69 @@ export default function SummaryPage({ params }: PageProps) {
                                 <Trash2 className="w-4 h-4" />
                               </button>
                             </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Continue Learning Section */}
+                  {summary && summary.content && (
+                    <div className="mt-10 border-t border-slate-200/60 dark:border-slate-800/60 pt-8" id="learning-path-section">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-10 h-10 rounded-xl bg-orange-100 dark:bg-orange-900/40 flex items-center justify-center">
+                          <Lightbulb className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Continue Learning</h3>
+                          <p className="text-sm text-slate-500 dark:text-slate-400">Related videos to deepen your knowledge.</p>
+                        </div>
+                      </div>
+
+                      {learningPathLoading ? (
+                        <div className="flex justify-center py-6">
+                          <Loader2 className="w-6 h-6 animate-spin text-slate-400" />
+                        </div>
+                      ) : learningPath.length === 0 ? (
+                        <div className="text-center py-8 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200/60 dark:border-slate-800/80">
+                          <Lightbulb className="w-10 h-10 mx-auto mb-3 text-slate-400 opacity-50" />
+                          <p className="text-sm text-slate-500 dark:text-slate-400">No related videos found.</p>
+                        </div>
+                      ) : (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 lg:gap-4 gap-4">
+                          {learningPath.map((video) => (
+                            <a
+                              key={video.videoId}
+                              href={`https://www.youtube.com/watch?v=${video.videoId}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group flex gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-800/60 hover:shadow-md hover:border-orange-300 dark:hover:border-orange-700/60 transition-all items-start"
+                            >
+                              <div className="relative w-32 aspect-video flex-shrink-0 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800">
+                                <img
+                                  src={video.thumbnail}
+                                  alt={video.title}
+                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                  onError={(e) => {
+                                    (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
+                                  }}
+                                />
+                                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
+                                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                  <div className="w-8 h-8 rounded-full bg-white/90 flex items-center justify-center shadow-sm">
+                                    <Play className="w-4 h-4 text-orange-600 ml-0.5" />
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="flex flex-col min-w-0 flex-1">
+                                <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 line-clamp-2 leading-snug group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                                  {video.title}
+                                </h4>
+                                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 truncate">
+                                  {video.channelName}
+                                </p>
+                              </div>
+                            </a>
                           ))}
                         </div>
                       )}
