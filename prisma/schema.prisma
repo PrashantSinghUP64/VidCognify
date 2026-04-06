@@ -29,6 +29,7 @@ model User {
   summaries             Summary[]
   apiKeys               UserApiKey[]
   securityQuestions     UserSecurityQuestion[]
+  highlights            Highlight[]
 }
 
 model Session {
@@ -128,6 +129,7 @@ model Summary {
   topics             Topic[]
   topicEdits         UserTopicEdit[]
   transcriptSegments TranscriptSegment[]
+  highlights         Highlight[]
 
   @@unique([videoId, userId, language])
   @@index([userId])
@@ -207,4 +209,24 @@ model TranscriptSegment {
   summary Summary @relation(fields: [summaryId], references: [id], onDelete: Cascade)
 
   @@index([summaryId, order])
+}
+
+// ============================================
+// Highlights & Bookmarks
+// ============================================
+
+model Highlight {
+  id        String   @id @default(cuid())
+  userId    String
+  summaryId String
+  text      String
+  note      String?
+  color     String   @default("yellow") // yellow | green | blue | pink
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  summary Summary @relation(fields: [summaryId], references: [id], onDelete: Cascade)
+
+  @@index([summaryId])
+  @@index([userId])
 }
