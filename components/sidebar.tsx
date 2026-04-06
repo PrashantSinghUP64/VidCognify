@@ -25,6 +25,7 @@ import {
   LayoutDashboard,
   Sun,
   Moon,
+  GitCompare,
 } from "lucide-react"
 import type React from "react"
 import { useAuth } from "@/hooks/useAuth"
@@ -40,6 +41,11 @@ const routes = [
     label: "History",
     icon: History,
     href: "/history",
+  },
+  {
+    label: "Compare",
+    icon: GitCompare,
+    href: "/compare",
   },
 ]
 
