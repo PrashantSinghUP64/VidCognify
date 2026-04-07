@@ -7,7 +7,7 @@ import {
   Sparkles, Brain, Clock, Globe, MessageSquare, GitCompare,
   BookOpen, HelpCircle, Lightbulb, Star, Zap, BarChart3,
   Key, Github, Linkedin, Twitter, Youtube, Mail, Link2,
-  ArrowRight, Play, ChevronRight, Shield, Database, Code2, LayoutDashboard
+  ArrowRight, Play, ChevronRight, Shield, Database, Code2, LayoutDashboard, Home as HomeIcon
 } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 
@@ -206,13 +206,13 @@ export default function HomePage() {
             {isLoading ? (
               <div className="h-12 w-12 rounded-full border-2 border-violet-500 border-t-transparent animate-spin" />
             ) : isAuthenticated ? (
-              <Link href="/dashboard">
+              <Link href="/home">
                 <motion.div
                   whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
                   className="flex cursor-pointer items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold text-base shadow-lg shadow-violet-500/25 transition-all duration-200"
                 >
-                  <LayoutDashboard className="w-4 h-4" />
-                  Go to Dashboard
+                  <HomeIcon className="w-4 h-4" />
+                  Home
                   <ArrowRight className="w-4 h-4" />
                 </motion.div>
               </Link>
