@@ -24,18 +24,15 @@ export async function GET(req: NextRequest) {
       select: { category: true, keywords: true, title: true }
     });
 
-    if (!summaryRecord) {
-      return NextResponse.json({ error: "Summary not found" }, { status: 404 });
-    }
+    console.log("Summary found:", !!summaryRecord);
+    console.log("Category:", summaryRecord?.category);
+    console.log("Keywords:", summaryRecord?.keywords);
 
-    const { category, keywords, title } = summaryRecord;
-    const queryParts = [];
-    if (category) queryParts.push(category);
-    if (keywords) queryParts.push(keywords.split(',').slice(0, 3).join(' ')); // Take top 3 keywords
-
-    let q = queryParts.join(' ').trim();
-    if (!q) {
-      q = title || "coding tutorial";
+    // continue with fallback
+    let searchQuery = "educational tutorial";
+    if (summaryRecord?.category) searchQuery = summaryRecord.category;
+    if (summaryRecord?.keywords) {
+      searchQuery += " " + summaryRecord.keywords.split(",").slice(0, 3).join(" ");
     }
 
     const apiKey = process.env.YOUTUBE_API_KEY;
@@ -44,13 +41,20 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ videos: [] });
     }
 
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(q)}&maxResults=5&type=video&key=${apiKey}`;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&maxResults=5&type=video&key=${apiKey}`;
+    
+    console.log("Search query:", searchQuery);
+    console.log("YouTube API Key exists:", !!process.env.YOUTUBE_API_KEY);
+
     const ytRes = await fetch(url);
+    
+    console.log("YouTube status:", ytRes.status);
     if (!ytRes.ok) {
-      throw new Error(`YouTube API error: ${ytRes.status}`);
+      return NextResponse.json({ videos: [] });
     }
 
     const ytData = await ytRes.json();
+    console.log("YouTube data:", JSON.stringify(ytData));
     
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const videos = ytData.items.map((item: any) => ({
@@ -64,7 +68,7 @@ export async function GET(req: NextRequest) {
 
   } catch (error) {
     console.error("Learning Path GET error:", error);
-    return NextResponse.json({ error: "Failed to fetch learning path" }, { status: 500 });
+    return NextResponse.json({ videos: [] });
   }
 }
 
