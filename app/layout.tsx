@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import { Sidebar, MobileSidebar } from "@/components/sidebar"
 import { Providers } from "@/components/providers"
+import LandingChatBot from "@/components/LandingChatBot"
 import type React from "react"
 
 const inter = Inter({
@@ -71,6 +72,7 @@ export default function RootLayout({
               {children}
             </main>
           </div>
+          <LandingChatBot />
         </Providers>
       </body>
     </html>

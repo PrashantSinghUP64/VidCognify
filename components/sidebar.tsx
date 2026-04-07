@@ -35,7 +35,7 @@ const routes = [
   {
     label: "Home",
     icon: Home,
-    href: "/",
+    href: "/home",
   },
   {
     label: "History",
@@ -105,25 +105,6 @@ export function Sidebar({ className }: SidebarProps) {
               )}
             </AnimatePresence>
           </Link>
-          {/* Theme Toggle - always visible in top-right corner */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <button
-                onClick={toggleTheme}
-                aria-label="Toggle theme"
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200"
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-4 h-4" />
-                ) : (
-                  <Moon className="w-4 h-4" />
-                )}
-              </button>
-            </TooltipTrigger>
-            <TooltipContent side="right">
-              {theme === "dark" ? "Light mode" : "Dark mode"}
-            </TooltipContent>
-          </Tooltip>
         </div>
 
         {/* Navigation */}
@@ -357,18 +338,6 @@ export function MobileSidebar() {
               VidCognify
             </span>
           </Link>
-          {/* Theme Toggle */}
-          <button
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-            className="ml-auto w-9 h-9 rounded-xl flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200"
-          >
-            {theme === "dark" ? (
-              <Sun className="w-5 h-5" />
-            ) : (
-              <Moon className="w-5 h-5" />
-            )}
-          </button>
         </div>
 
         {/* Navigation */}
