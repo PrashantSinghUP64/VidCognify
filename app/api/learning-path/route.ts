@@ -8,14 +8,12 @@ export async function GET(req: NextRequest) {
   if (!auth.success) return auth.response;
   const userId = auth.userId;
 
-  const rawVideoUrl = req.nextUrl.searchParams.get("videoUrl") ?? "";
-  if (!rawVideoUrl) {
-    return NextResponse.json({ error: "videoUrl is required" }, { status: 400 });
-  }
+  const rawVideoId = req.nextUrl.searchParams.get("videoId") || req.nextUrl.searchParams.get("videoUrl") || "";
+  let decodedId = decodeVideoUrl(rawVideoId) || rawVideoId;
+  const videoId = decodedId.split("?")[0].trim();
 
-  const videoId = decodeVideoUrl(rawVideoUrl);
   if (!videoId) {
-    return NextResponse.json({ error: "Invalid YouTube URL" }, { status: 400 });
+    return NextResponse.json({ error: "videoId is required" }, { status: 400 });
   }
 
   try {
@@ -29,10 +27,12 @@ export async function GET(req: NextRequest) {
     console.log("Keywords:", summaryRecord?.keywords);
 
     // continue with fallback
-    let searchQuery = "educational tutorial";
-    if (summaryRecord?.category) searchQuery = summaryRecord.category;
-    if (summaryRecord?.keywords) {
-      searchQuery += " " + summaryRecord.keywords.split(",").slice(0, 3).join(" ");
+    let searchQuery = "technology internship tutorial";
+    
+    if (summaryRecord) {
+      searchQuery = summaryRecord.keywords?.split(",").slice(0,3).join(" ") 
+                 || summaryRecord.category 
+                 || "technology tutorial";
     }
 
     const apiKey = process.env.YOUTUBE_API_KEY;
