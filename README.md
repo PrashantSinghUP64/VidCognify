@@ -129,7 +129,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 🌟 1. Landing Page — Hero Section
 > "Transform YouTube into Intelligence" — AI-Powered YouTube Intelligence Platform
 
-![Landing Page Hero](screenshots/landing-hero.png)
+![Landing Page Hero](landing-hero%20(1).png)
 
 **What's happening here:**
 - Clean, professional hero section with animated floating mockup showing real app UI
@@ -144,7 +144,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 📊 2. Stats Bar + Feature Mockup
 > Platform stats at a glance + visual preview of the summary UI
 
-![Stats and Mockup](screenshots/stats-mockup.png)
+![Stats and Mockup](stats-mockup.png)
 
 **What's happening here:**
 - Stats bar: **12+ Features Packed | 5+ Languages Supported | 5 AI Models Integrated | 100% Open Source**
@@ -159,7 +159,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### ⚡ 3. Features Grid — All 12 Features
 > Every tool a serious learner needs — showcased with icons and descriptions
 
-![Features Grid](screenshots/features-grid.png)
+![Features Grid](features-grid.png)
 
 **What's happening here:**
 - 3-column responsive grid of all 12 feature cards
@@ -173,7 +173,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 📋 4. Features Grid — More Features (Bottom Row)
 > Analytics, BYOK, Archive features
 
-![Features Grid Bottom](screenshots/features-grid-bottom.png)
+![Features Grid Bottom](features-grid-bottom.png)
 
 **What's happening here:**
 - Continues the feature grid: **Structured Study Notes, Dynamic Learning Paths, Smart Highlights, Analytics Dashboard, Bring Your Own Key, Full History Archive**
@@ -186,7 +186,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 🎬 5. Summary Page — Video + Chapter Detection
 > Core feature: AI-generated summary with chapter timestamps
 
-![Summary Page](screenshots/summary-page.png)
+![Summary Page](summary-page.png)
 
 **What's happening here:**
 - **Left panel**: YouTube video thumbnail with play button, chapter list with colored dot indicators and timestamps
@@ -202,7 +202,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 📖 6. Summary Page — Chapter Summaries Deep Dive
 > Detailed chapter-by-chapter breakdown with bullet points
 
-![Chapter Summaries](screenshots/chapter-summaries.png)
+![Chapter Summaries](chapter-summaries.png)
 
 **What's happening here:**
 - Each chapter has its own expandable card with purple left border accent
@@ -218,7 +218,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 💬 7. Summary Page — AI Chat with Video
 > Ask anything about the video — AI answers from transcript
 
-![AI Chat](screenshots/ai-chat.png)
+![AI Chat](ai-chat.png)
 
 **What's happening here:**
 - "Chat with Video" section at the bottom of the summary page
@@ -231,7 +231,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 🎓 8. Summary Page — Quiz Generator + Notes + Highlights
 > Test understanding, generate notes, and save highlights
 
-![Quiz Notes Highlights](screenshots/quiz-notes-highlights.png)
+![Quiz Notes Highlights](quiz-notes-highlights.png)
 
 **What's happening here:**
 - **Quiz Generator**: "Generate 5 multiple choice questions based on this video" → Green "Generate Quiz" button
@@ -244,7 +244,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### ⚔️ 9. Video Comparison — Ultimate Video Battle
 > Compare two YouTube videos head-to-head with AI analysis
 
-![Video Compare Input](screenshots/compare-input.png)
+![Video Compare Input](compare-input.png)
 
 **What's happening here:**
 - Page title: "⚔️ Ultimate Video Battle" — "Line up two videos and let AI declare the conceptual winner"
@@ -257,7 +257,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 🏆 10. Video Comparison — Results with Winner
 > AI declares the winner and shows what each video does better
 
-![Compare Results Winner](screenshots/compare-winner.png)
+![Compare Results Winner](compare-winner.png)
 
 **What's happening here:**
 - **Winner announcement card**: Trophy icon, "🏆 Video 1 Wins!" in large gold text
@@ -272,7 +272,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 🔗 11. Video Comparison — Topics Both Cover
 > Shared topics shown as interactive badges
 
-![Compare Topics](screenshots/compare-topics.png)
+![Compare Topics](compare-topics.png)
 
 **What's happening here:**
 - Both video cards shown side-by-side with their thumbnails (actual YouTube thumbnail images loaded)
@@ -284,7 +284,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 📊 12. Analytics Dashboard
 > Track your learning progress, streak, and topic distribution
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](dashboard.png)
 
 **What's happening here:**
 - Header: "Your Dashboard — Track your learning progress and analytics"
@@ -298,7 +298,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 📝 13. Register Page — Create Account
 > Clean, multi-step registration flow
 
-![Register Page](screenshots/register.png)
+![Register Page](register.png)
 
 **What's happening here:**
 - Step indicator: **[1] ——— [2]** showing 2-step registration
@@ -312,7 +312,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 🤖 14. VidCognify AI Assistant — Floating Chatbot
 > Built-in assistant to help users understand platform features
 
-![AI Assistant](screenshots/ai-assistant.png)
+![AI Assistant](ai-assistant.png)
 
 **What's happening here:**
 - Purple floating button (graduation cap icon) in bottom-right corner
@@ -326,7 +326,7 @@ Instead of spending hours watching videos, **VidCognify gives you AI-generated s
 ### 👤 15. Creator Section + Footer
 > Professional creator profile with all social links
 
-![Creator Footer](screenshots/creator-footer.png)
+![Creator Footer](creator-footer.png)
 
 **What's happening here:**
 - "BUILT BY" label above the creator name
