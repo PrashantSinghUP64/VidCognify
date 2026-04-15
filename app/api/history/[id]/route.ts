@@ -92,3 +92,46 @@ export async function GET(
     );
   }
 }
+
+export async function DELETE(
+  request: NextRequest,
+  { params }: Props
+): Promise<Response> {
+  const auth = await authenticateRequest(request);
+  if (!auth.success) {
+    return auth.response;
+  }
+
+  try {
+    const { id } = await params;
+
+    if (!id) {
+      return NextResponse.json(
+        { error: 'Summary ID is required' },
+        { status: 400 }
+      );
+    }
+
+    // Ensure the record belongs to the current user before deleting
+    const existing = await prisma.summary.findUnique({
+      where: { id, userId: auth.userId },
+    });
+
+    if (!existing) {
+      return NextResponse.json(
+        { error: 'Summary not found' },
+        { status: 404 }
+      );
+    }
+
+    await prisma.summary.delete({ where: { id } });
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error('Error deleting summary:', error);
+    return NextResponse.json(
+      { error: 'Failed to delete summary' },
+      { status: 500 }
+    );
+  }
+}

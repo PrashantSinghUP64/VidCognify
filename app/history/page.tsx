@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 import { AVAILABLE_LANGUAGES } from "@/lib/youtube"
 import { Badge } from "@/components/ui/badge"
 import { useAuth } from "@/hooks/useAuth"
-import { Youtube, Clock, Headphones, Search, History, Loader2 } from "lucide-react"
+import { Youtube, Clock, Headphones, Search, History, Loader2, Trash2 } from "lucide-react"
 import { containerVariants, itemVariants, cardHover } from "@/lib/animations"
 
 interface Summary {
@@ -29,6 +29,43 @@ export default function HistoryPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState("")
+  const [toast, setToast] = useState<string | null>(null)
+
+  const showToast = (msg: string) => {
+    setToast(msg)
+    setTimeout(() => setToast(null), 3000)
+  }
+
+  const handleDelete = async (e: React.MouseEvent, id: string) => {
+    e.preventDefault()
+    e.stopPropagation()
+    try {
+      const res = await fetch(`/api/history/${id}`, {
+        method: "DELETE",
+        credentials: "include",
+      })
+      if (!res.ok) throw new Error("Failed")
+      setSummaries((prev) => prev.filter((s) => s.id !== id))
+      showToast("Deleted successfully")
+    } catch {
+      showToast("Failed to delete. Please try again.")
+    }
+  }
+
+  const handleClearAll = async () => {
+    if (!window.confirm("Are you sure you want to delete ALL history? This cannot be undone.")) return
+    try {
+      const res = await fetch("/api/history", {
+        method: "DELETE",
+        credentials: "include",
+      })
+      if (!res.ok) throw new Error("Failed")
+      setSummaries([])
+      showToast("All history cleared")
+    } catch {
+      showToast("Failed to clear history. Please try again.")
+    }
+  }
 
   // Redirect to login if not authenticated
   useEffect(() => {
@@ -241,6 +278,15 @@ export default function HistoryPage() {
           <p className="text-slate-500 dark:text-slate-400 mt-3 text-base max-w-md mx-auto">
             Browse and manage your previously generated video summaries
           </p>
+          {summaries.length > 0 && (
+            <button
+              onClick={handleClearAll}
+              className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-500 text-sm font-medium transition-all"
+            >
+              <Trash2 className="h-4 w-4" />
+              Clear All History
+            </button>
+          )}
         </motion.div>
 
         {/* Search and Filters */}
@@ -264,6 +310,14 @@ export default function HistoryPage() {
         </motion.div>
 
         {/* Summary Grid */}
+        {summaries.length > 0 && (
+          <button
+            onClick={handleClearAll}
+            className="bg-red-500 text-white px-4 py-2 rounded-lg mb-4"
+          >
+            🗑️ Clear All History
+          </button>
+        )}
         {filteredSummaries.length === 0 ? (
           <motion.div variants={itemVariants}>
             <div className="card-elevated p-12 text-center">
@@ -308,7 +362,7 @@ export default function HistoryPage() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
                         {/* Mode Badge */}
-                        <div className="absolute top-3 right-3">
+                        <div className="absolute top-3 left-3">
                           <Badge
                             variant="secondary"
                             className="bg-black/50 backdrop-blur-sm text-white border-0"
@@ -321,6 +375,16 @@ export default function HistoryPage() {
                             {summary.mode === "podcast" ? "Podcast" : "Video"}
                           </Badge>
                         </div>
+
+                        {/* Delete button — top-right, always visible */}
+                        <button
+                          onClick={(e) => handleDelete(e, summary.id)}
+                          aria-label="Delete summary"
+                          title="Delete"
+                          className="absolute top-2 right-2 z-50 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full shadow-lg"
+                        >
+                          <Trash2 size={16} />
+                        </button>
 
                         {/* Title overlay */}
                         <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -348,6 +412,13 @@ export default function HistoryPage() {
           </div>
         )}
       </motion.div>
+
+      {/* Toast notification */}
+      {toast && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 px-5 py-3 rounded-xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-sm font-medium shadow-xl z-50 animate-fade-in">
+          {toast}
+        </div>
+      )}
     </div>
   )
 }

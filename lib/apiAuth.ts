@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
+import { headers } from "next/headers"
 import { auth } from "./auth-server"
 
 /**
@@ -18,7 +19,7 @@ export type AuthResult =
 export async function authenticateRequest(request: NextRequest): Promise<AuthResult> {
   try {
     const session = await auth.api.getSession({
-      headers: request.headers,
+      headers: await headers(),
     })
 
     if (!session || !session.user) {
@@ -58,7 +59,7 @@ export async function authenticateRequest(request: NextRequest): Promise<AuthRes
 export async function getUserIdFromRequest(request: NextRequest): Promise<string | null> {
   try {
     const session = await auth.api.getSession({
-      headers: request.headers,
+      headers: await headers(),
     })
 
     return session?.user?.id ?? null

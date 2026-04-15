@@ -58,3 +58,24 @@ export async function GET(request: NextRequest) {
     );
   }
 }
+
+export async function DELETE(request: NextRequest) {
+  const auth = await authenticateRequest(request);
+  if (!auth.success) {
+    return auth.response;
+  }
+
+  try {
+    await prisma.summary.deleteMany({
+      where: { userId: auth.userId },
+    });
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error('Error clearing history:', error);
+    return NextResponse.json(
+      { error: 'Failed to clear history' },
+      { status: 500 }
+    );
+  }
+}

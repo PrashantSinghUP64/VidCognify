@@ -26,14 +26,19 @@ export async function GET(req: NextRequest) {
     console.log("Category:", summaryRecord?.category);
     console.log("Keywords:", summaryRecord?.keywords);
 
-    // continue with fallback
-    let searchQuery = "technology internship tutorial";
+    // By default, fallback to a generic topic
+    let currentTopic = "technology";
     
     if (summaryRecord) {
-      searchQuery = summaryRecord.keywords?.split(",").slice(0,3).join(" ") 
+      // Prioritize title, fallback to category, then keywords
+      currentTopic = summaryRecord.title 
                  || summaryRecord.category 
-                 || "technology tutorial";
+                 || (summaryRecord.keywords ? summaryRecord.keywords.split(",")[0].trim() : "technology");
     }
+
+    console.log("Current Topic extracted:", currentTopic);
+    // Use ONLY the video title/topic as search query
+    const searchQuery = `${currentTopic} tutorial for beginners`;
 
     const apiKey = process.env.YOUTUBE_API_KEY;
     if (!apiKey) {
@@ -46,7 +51,7 @@ export async function GET(req: NextRequest) {
     console.log("Search query:", searchQuery);
     console.log("YouTube API Key exists:", !!process.env.YOUTUBE_API_KEY);
 
-    const ytRes = await fetch(url);
+    const ytRes = await fetch(url, { cache: 'no-store' });
     
     console.log("YouTube status:", ytRes.status);
     if (!ytRes.ok) {
